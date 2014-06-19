@@ -421,8 +421,6 @@
         if (m<=9) {m = '0'+m};
         if (s<=9) {s = '0'+s};
 
-        var color = '#'+h+m+s;
-
         //since the background color is changing, lets use the complementary color for the text
         temprgb = {r:h,g:m,b:s};
         temphsv = RGB2HSV(temprgb);
@@ -431,8 +429,8 @@
 
         var colorReversed = 'rgb('+temprgb.r+','+temprgb.g+','+temprgb.b+')';
 
-        $("nav ul li a.active, nav ul li a:hover").css({"background-color": color, "color" : colorReversed });
-        $("nav ul li a:not('.active')").css({"background-color": colorReversed, "color" : color });
+        $("nav ul li a.active, nav ul li a:hover").css({"background-color": temprgb, "color" : colorReversed });
+        $("nav ul li a:not('.active')").css({"background-color": colorReversed, "color" : temprgb });
 
         setTimeout(refreshData, x*1000);
     }
