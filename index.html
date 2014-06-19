@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <title>Todd Baur's One Page Wonder | Toadkicker.com</title>
-  <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One' rel='stylesheet' type='text/css'>
   <style>
+    @import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
     body {
-      font-family: "Julius Sans One";
+      font-family: "Oxygen";
       font-size: 12.5pt;
       color: #636363;
       margin: 0;
@@ -14,7 +14,7 @@
     }
     nav {
       position: fixed;
-      left: 10px;
+      left: 20px;
     }
     nav ul li {
       display: inline-block;
@@ -22,26 +22,16 @@
     }
     nav ul li a {
       font-family: "Lily Script One";
-      border: 1px dotted #84fdaf;
-      background-color: #64c085;
       display: block;
       padding: 10px;
-      color: #3e3e3e;
       box-shadow: 0 1px 15px #333;
       border-radius: .5em;
       -moz-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
     }
-    nav ul li a:focus {
-      background-color: #9c4800;
-      border: 1px solid #ff7703;
-      color: #e3e3e3;
-    }
+
     nav ul li a.active, nav ul li a:hover {
-      background-color: #9c4800;
-      border: 1px solid #ff7703;
-      color: #e3e3e3;
       -webkit-transition: all 0.3s ease-out;
       -moz-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
@@ -54,16 +44,15 @@
     #main section{
       position: absolute;
       margin-left: 60px;
-      padding: 0 20px;
+      padding: 0 10px;
       top: 70px;
-      font-family: "Julius Sans One";
       color: #3e3e3e;
       z-index: 1;
       box-shadow: 0 1px 15px #333;
-      background-color: rgba(255,255,255, 0.95);
+      background-color: rgba(255,255,255, 0.85);
     }
     #home h1, #portfolio h1, #contact h1 {
-      font-family: "Lily Script One";
+      font-family: "Julius Sans One";
     }
     #portfolio .portfolio {
       height: 440px;
@@ -80,6 +69,9 @@
       padding: 0 10px 10px 0;
       width: 33%;
       min-height: 290px;
+    }
+    a.company {
+        font-family: "Julius Sans One";
     }
     .company-title {
       font-size: 0.75em;
@@ -126,7 +118,6 @@
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
 </head>
 <body class="background">
 <div class="container in">
@@ -146,7 +137,7 @@
       <h1>Hello, I am Todd Baur.</h1>
       <p>I work in San Francisco as a front end designer and developer using CSS3/HTML5, Javascript, Ruby, and Java&#46;</p>
       <p>I love working toward people and computers getting along with each other&#46;</p>
-      <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;.</p>
+      <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;</p>
       <p>I keep my memory fresh on <a href="http://www.codecademy.com/arrayrockstar44013">codecademy</a>, or <a href="http://stackoverflow.com/users/898905/todd-baur" target="_blank">stackoverflow</a>&#46;</p>
       <p>Sometimes you can find me attending or organizing events with <a href="http://www.cascadesf.com" target="_blank">CascadeSF</a>&#46; Otherwise I'm found gardening, bicycling, or being as social as possible&#46;</p>
       <p>This site is dedicated to my family for the years of support and tireless love, and peers for allowing me to give back to one of the most challenging careers in the world&#46;</p>
@@ -155,11 +146,6 @@
 </script>
 <script type="text/html" id="portfolio-template">
   <section id="portfolio">
-    <div class="content">
-      <h1> 
-        Portfolio
-      </h1>
-    </div>
     <div class="portfolio content">
       <ul>
         <li>
@@ -170,32 +156,32 @@
         </li>
         <li>
           <a class="company" href="http://www.byliner.com" target="_blank">Byliner, Inc.</a>
-          <div class="company-title">Software Developer</div> 
-          <div class="company-description"> 
-            <p>Developed XML Ingest system, allowing the company to quickly deliver more content to the customers. The system allowed for authenticated cross domain uploads and stored the files on Amazon S3. Developed HTML/CSS responsive interfaces supporting marketing campaigns and features on the consumer facing site.</p> 
+          <div class="company-title">Software Developer</div>
+          <div class="company-description">
+            <p>Developed XML Ingest system, allowing the company to quickly deliver more content to the customers. The system allowed for authenticated cross domain uploads and stored the files on Amazon S3. Developed HTML/CSS responsive interfaces supporting marketing campaigns and features on the consumer facing site.</p>
           </div>
-        </li> 
-        <li> 
+        </li>
+        <li>
           <a class="company" href="http://www.toadkicker.com">Freelance Designer/Developer</a>
           <div class="company-title">Designer/Developer</div>
-          <div class="company-description"> 
-            <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a seven month project with Tesla Motors delivering a custom application that reported on the status of the assembly line's production.</p> 
-          </div> 
-        </li> 
-        <li> 
+          <div class="company-description">
+            <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a seven month project with Tesla Motors delivering a custom application that reported on the status of the assembly line's production.</p>
+          </div>
+        </li>
+        <li>
           <a href="http://www.roamlocal.com" target="_blank">Roamlocal</a>
-          <div class="company-title">Designer/Developer</div> 
-          <div class="company-description"> 
-            <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad presentation. The site is designed to portray a post card on a table. The logo was custom drawn using Illustrator and then used Photoshop to remove the original lettering. The site enables customers to schedule tours. It is backed by a complete admin tool. Written using Ruby on Rails, HTML5, CSS3, and jQuery.</p> 
-          </div> 
+          <div class="company-title">Designer/Developer</div>
+          <div class="company-description">
+            <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad presentation. The site is designed to portray a post card on a table. The logo was custom drawn using Illustrator and then used Photoshop to remove the original lettering. The site enables customers to schedule tours. It is backed by a complete admin tool. Written using Ruby on Rails, HTML5, CSS3, and jQuery.</p>
+          </div>
         </li>
         <li>
           <a href="http://www.paypal.com" target="_blank">Paypal, Inc.</a>
           <div class="company-title">Front End Engineer</div>
           <div class="company-description">
             <p>Worked as a front end developer and UX engineer. Responsible for product design and development of Paypal's Customer Service Application. Developed <a href="http://shopping.paypal.com" target="_blank">shopping.paypal.com</a>, a multi-tenant site providing branded shopping experiences for Paypal and its key partners. Also did some good work on <a href="http://www.billmelater.com" target="_blank">billmelater.com</a></p>
-          </div> 
-        </li> 
+          </div>
+        </li>
         <li>
           <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance Institute, Inc.</a>
           <div class="company-title">Software Engineer</div>
@@ -210,15 +196,12 @@
 <script type="text/html" id="contact-template">
   <section id="contact">
     <div class="content">
-      <h1>Contact</h1>
-    </div> 
-    <div class="content">
       <h3>Todd Baur</h3>
       <p>858-752-1459</p>
       <p>todd@toadkicker.com</p>
       <p>2986 Ramona Street</p>
       <p>Pinole, CA 94564</p>
-    </div> 
+    </div>
   </section>
 </script>
 <script type="text/javascript">
@@ -235,7 +218,7 @@
   //and a controller
   window.controller = function(view){
     switch(view) {
-      case "#homeView":						
+      case "#homeView":
         setActiveNav(view);
         return $("#main").html(window.homeView);
       case "#portfolioView":
@@ -243,7 +226,7 @@
         return $("#main").html(window.portfolioView);
       case "#contactView":
         setActiveNav(view);
-        return $("#main").html(window.contactView);			
+        return $("#main").html(window.contactView);
     }
   };
 
@@ -256,9 +239,9 @@
     };
     //lets make sure we got the target argument
     if(target !== undefined) {
-      $("nav a[href=" + target + "]").addClass("active");    		
+      $("nav a[href=" + target + "]").addClass("active");
     } else {
-      $("nav a[href=" + window.location.hash + "]").addClass("active");    		
+      $("nav a[href=" + window.location.hash + "]").addClass("active");
     }
   };
 
@@ -298,7 +281,7 @@
     var on, off, $el;
     $el = $("#hide-everything");
     //things are hidden when on
-    on = function() { 
+    on = function() {
       $("#hide-everything").html("Show Stuff!");
       $("footer").animate({"height":"2em", "width":"7em"});
     };
@@ -339,10 +322,127 @@
   $(document).on("click", "#hide-everything", function(event) { toggleView(event); });
 
 </script>
+<script>
+    function RGB2HSV(rgb) {
+        hsv = new Object();
+        max = max3(rgb.r, rgb.g, rgb.b);
+        dif = max - min3(rgb.r, rgb.g, rgb.b);
+        hsv.saturation = (max == 0.0) ? 0 : (100 * dif / max);
+        if (hsv.saturation == 0) hsv.hue = 0;
+        else if (rgb.r == max) hsv.hue = 60.0 * (rgb.g - rgb.b) / dif;
+        else if (rgb.g == max) hsv.hue = 120.0 + 60.0 * (rgb.b - rgb.r) / dif;
+        else if (rgb.b == max) hsv.hue = 240.0 + 60.0 * (rgb.r - rgb.g) / dif;
+        if (hsv.hue < 0.0) hsv.hue += 360.0;
+        hsv.value = Math.round(max * 100 / 255);
+        hsv.hue = Math.round(hsv.hue);
+        hsv.saturation = Math.round(hsv.saturation);
+        return hsv;
+    }
+
+    // RGB2HSV and HSV2RGB are based on Color Match Remix [http://color.twysted.net/]
+    // which is based on or copied from ColorMatch 5K [http://colormatch.dk/]
+    function HSV2RGB(hsv) {
+        var rgb = new Object();
+        if (hsv.saturation == 0) {
+            rgb.r = rgb.g = rgb.b = Math.round(hsv.value * 2.55);
+        } else {
+            hsv.hue /= 60;
+            hsv.saturation /= 100;
+            hsv.value /= 100;
+            i = Math.floor(hsv.hue);
+            f = hsv.hue - i;
+            p = hsv.value * (1 - hsv.saturation);
+            q = hsv.value * (1 - hsv.saturation * f);
+            t = hsv.value * (1 - hsv.saturation * (1 - f));
+            switch (i) {
+                case 0:
+                    rgb.r = hsv.value;
+                    rgb.g = t;
+                    rgb.b = p;
+                    break;
+                case 1:
+                    rgb.r = q;
+                    rgb.g = hsv.value;
+                    rgb.b = p;
+                    break;
+                case 2:
+                    rgb.r = p;
+                    rgb.g = hsv.value;
+                    rgb.b = t;
+                    break;
+                case 3:
+                    rgb.r = p;
+                    rgb.g = q;
+                    rgb.b = hsv.value;
+                    break;
+                case 4:
+                    rgb.r = t;
+                    rgb.g = p;
+                    rgb.b = hsv.value;
+                    break;
+                default:
+                    rgb.r = hsv.value;
+                    rgb.g = p;
+                    rgb.b = q;
+            }
+            rgb.r = Math.round(rgb.r * 255);
+            rgb.g = Math.round(rgb.g * 255);
+            rgb.b = Math.round(rgb.b * 255);
+        }
+        return rgb;
+    }
+
+    //Adding HueShift via Jacob (see comments)
+    function HueShift(h, s)
+    {
+        h += s;
+        while (h >= 360.0) h -= 360.0;
+        while (h < 0.0) h += 360.0;
+        return h;
+    }
+
+    //min max via Hairgami_Master (see comments)
+    function min3(a, b, c) {
+        return (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
+    }
+    function max3(a, b, c) {
+        return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+    }
+
+    function refreshData()
+    {
+        x = 1;  // x = seconds
+        var d = new Date()
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+
+        if (h<=9) {h = '0'+h};
+        if (m<=9) {m = '0'+m};
+        if (s<=9) {s = '0'+s};
+
+        var color = '#'+h+m+s;
+
+        //since the background color is changing, lets use the complementary color for the text
+        temprgb = {r:h,g:m,b:s};
+        temphsv = RGB2HSV(temprgb);
+        temphsv.hue = HueShift(temphsv.hue, 180.0);
+        temprgb = HSV2RGB(temphsv);
+
+        var colorReversed = 'rgb('+temprgb.r+','+temprgb.g+','+temprgb.b+')';
+
+        $("nav ul li a.active, nav ul li a:hover").css({"background-color": color, "color" : colorReversed });
+        $("nav ul li a:not('.active')").css({"background-color": colorReversed, "color" : color });
+
+        setTimeout(refreshData, x*1000);
+    }
+
+    refreshData(); // execute function
+</script>
 <footer>
 <a id="hide-everything" href="#hideView">Enjoy the View!</a>
 <div>
-  <p id="copywhatever">&copy; 2013 Todd Baur. This site is a playground and feel free to laugh at it. &#9786;</p>	
+  <p id="copywhatever">&copy; 2014 Todd Baur. Background images provide by reddit.com &#9786;</p>
   <div id="picker">
     <label for="wallpaper-picker">Pick a background:</label>
     <select id="wallpaper-picker"></select>
