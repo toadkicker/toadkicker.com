@@ -124,6 +124,7 @@
     <ul>
       <li><a id="home-link" href="#homeView">Home</a></li>
       <li><a id="portfolio-link" href="#portfolioView">Portfolio</a></li>
+      <li><a id="playground-link" href="#playgroundView">Playground</a></li>
       <li><a id="contact-link" href="#contactView">Contact</a></li>
     </ul>
   </nav>
@@ -203,17 +204,31 @@
     </div>
   </section>
 </script>
+<script type="text/html" id="playground-template">
+    <section id="playground">
+        <div class="content">
+            <h1>About this site</h1>
+        </div>
+        <p>I use this site to play with javascript and just have some fun with things.
+        The menu changes color based on what time it is. The values are converted from time to hex, then rgb.
+        I caclulate the complementary color from there and use it for the menu text color.
+        You could say that the current time is half past green.</p>
+        <p>It's also a basic example of using microtemplating. The content is wrapped in script tags that are appended when a menu is clicked.</p>
+        <p>Background images are coming from the top 10 wallpapers on reddit.com. Yay for ajax!</p>
+        <p>Of course, more interesting stuff lives in github. I do keep a number of private repositories, so if you're curious for more just ask me.</p>
+    </section>
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript">
   String.prototype.endsWith = function(suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
   };
-</script>
-<script>
+
   //lets make some views
   window.homeView = $("#home-template").html();
   window.portfolioView = $("#portfolio-template").html();
   window.contactView = $("#contact-template").html();
+  window.playgroundView = $("#playground-template").html();
   window.wallpapers = $("#reddit-wallpapers");
   //and a controller
   window.controller = function(view){
@@ -227,6 +242,9 @@
       case "#contactView":
         setActiveNav(view);
         return $("#main").html(window.contactView);
+      case "#playgroundView":
+        setActiveNav(view);
+        return $("#main").html(window.playgroundView);
     }
   };
 
@@ -433,8 +451,8 @@
         temphsv = RGB2HSV(temprgb);
         temphsv.hue = HueShift(temphsv.hue, 180.0);
         tempcomp = HSV2RGB(temphsv);
-        primary = "rgba("+temprgb.r+","+temprgb.g+","+temprgb.b+",0.85)";
-        complement = "rgba("+tempcomp.r+","+tempcomp.g+","+tempcomp.b+",0.85)";
+        primary = "rgb("+temprgb.r+","+temprgb.g+","+temprgb.b+")";
+        complement = "rgb("+tempcomp.r+","+tempcomp.g+","+tempcomp.b+")";
 
         $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color" : complement });
         $("nav ul li a:not('.active')").css({"background-color": complement, "color" : primary });
