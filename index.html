@@ -1,208 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Todd Baur's One Page Wonder | Toadkicker.com</title>
-  <style>
-    @import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
-    body {
-      font-family: "Oxygen";
-      font-size: 12.5pt;
-      color: #636363;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    nav {
-      position: fixed;
-      left: 20px;
-    }
-    nav ul li {
-      display: inline-block;
-      list-style: none;
-    }
-    nav ul li a {
-      font-family: "Lily Script One";
-      display: block;
-      padding: 10px;
-      box-shadow: 0 1px 15px #333;
-      border-radius: .5em;
-      -moz-transition: all 0.3s ease-out;
-      -o-transition: all 0.3s ease-out;
-      transition: all 0.3s ease-out;
-    }
+    <title>Todd Baur's One Page Wonder | Toadkicker.com</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
 
-    nav ul li a.active, nav ul li a:hover {
-      -webkit-transition: all 0.3s ease-out;
-      -moz-transition: all 0.3s ease-out;
-      -o-transition: all 0.3s ease-out;
-      transition: all 0.3s ease-out;
-    }
-    #main {
-      max-width: 920px;
-      position: relative;
-    }
-    #main section{
-      position: absolute;
-      margin-left: 60px;
-      padding: 0 10px;
-      top: 70px;
-      color: #3e3e3e;
-      z-index: 1;
-      box-shadow: 0 1px 15px #333;
-      background-color: rgba(255,255,255, 0.85);
-    }
-    #home h1, #portfolio h1, #contact h1 {
-      font-family: "Julius Sans One";
-    }
-    #portfolio .portfolio {
-      height: 440px;
-      overflow-y: auto;
-    }
+        @media (min-width: 320px) and (max-width: 480px) {
+            #main section {
+                left: 10px;
+                top: 20px;
+                width: 280px;
+            }
+            nav {
+                position: absolute;
+                left: 10px;
+                top: 0px;
+            }
+            nav ul li {
+                margin: 0px;
+            }
+            nav ul li a {
+                border-radius: 0;
+                padding: 5px 7px;
+            }
+            #hide-everything {
+                bottom: 60px;
+            }
+        }
 
-    #portfolio ul {
-      list-style: none;
-      padding: 0;
-    }
-    #portfolio ul li {
-      display: inline-table;
-      vertical-align: top;
-      padding: 0 10px 10px 0;
-      width: 33%;
-      min-height: 290px;
-    }
-    a.company {
-        font-family: "Julius Sans One";
-    }
-    .company-title {
-      font-size: 0.75em;
-    }
-    .company-description {
-      font-size: 0.9em;
-    }
+        @media (min-width: 481px) and (max-width: 640px) {
+            #main section {
+                left: 20px;
+                width: 360px;
+            }
+            nav {
+                left: 20px;
+                top: 10px;
+            }
+            nav ul li a {
+                padding: 8px 10px;
+            }
+        }
 
-    #hide-everything, #hide-everything:visited {
-      float: right;
-      color: #fff;
-    }
-    .in{
-      opacity: 1;
-      -webkit-transition: all .3s ease-out 0s;
-      -moz-transition: all .3s ease-out 0s;
-      -ms-transition: all .3s ease-out 0s;
-      -o-transition: all .3s ease-out 0s;
-      transition: all .3s ease-out 0s;
-    }
-    .out{
-      opacity: 0;
-      -webkit-transition: all .3s ease-out 0s;
-      -moz-transition: all .3s ease-out 0s;
-      -ms-transition: all .3s ease-out 0s;
-      -o-transition: all .3s ease-out 0s;
-      transition: all .3s ease-out 0s;
-    }
-    .background {
-      -moz-background-size: cover;
-      background-size: cover;
-    }
+        @media (min-width: 641px) and (max-width: 800px) {
+            #main section {
+                left: 30px;
+                width: 600px;
+            }
+            nav {
+                left: 30px;
+                top: 10px;
+            }
+            nav ul li {
+                margin: 2px;
+            }
+            nav ul li a {
+                padding: 10px;
+            }
+            #hide-everything {
+                top: 10px;
+            }
+        }
 
-    footer {
-      position: absolute;
-      height: 4.25em;
-      width: 50em;
-      bottom: 0;
-      right: 1em;
-      background-color:rgba(0, 0, 0, 0.5);
-      color: #fff;
-      z-index: 0;
-      padding: 1em;
-    }
-  </style>
+        @media (min-width: 801px) and (max-width: 1024px) {
+            #main section {
+                left: 30px;
+                width: 640px;
+            }
+            nav {
+                left: 30px;
+                top: 10px;
+            }
+            nav ul li {
+                margin: 2px;
+            }
+            nav ul li a {
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            #main section {
+                left: 60px;
+                width: 800px;
+            }
+            nav {
+                left: 60px;
+                top: 10px;
+            }
+            nav ul li {
+                margin: 5px 2px;
+            }
+            nav ul li a {
+                padding: 10px;
+            }
+        }
+
+        #main section {
+            position: absolute;
+            padding: 0 10px;
+            top: 70px;
+            color: #3e3e3e;
+            z-index: 1;
+            box-shadow: 0 1px 15px #333;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: "Oxygen";
+            font-size: 12.5pt;
+            color: #636363;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: absolute;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            float: left;
+        }
+
+        nav ul li a {
+            font-family: "Lily Script One";
+            display: block;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        #main {
+            max-width: 920px;
+            position: relative;
+        }
+
+        #home h1, #portfolio h1, #contact h1 {
+            font-family: "Julius Sans One";
+        }
+
+        #portfolio .portfolio {
+            height: 440px;
+            overflow-y: auto;
+        }
+
+        #portfolio ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #portfolio ul li {
+            display: inline-table;
+            vertical-align: top;
+            padding: 0 10px 10px 0;
+            width: 33%;
+            min-height: 290px;
+        }
+
+        a.company {
+            font-family: "Julius Sans One";
+        }
+
+        .company-title {
+            font-size: 0.75em;
+        }
+
+        .company-description {
+            font-size: 0.9em;
+        }
+
+        #hide-everything, #hide-everything:visited {
+            position: absolute;
+            right: 10px;
+            color: #fff;
+            padding: 10px;
+            background: rgba(128, 128, 128, 0.85);
+        }
+
+        .in {
+            opacity: 1;
+            -webkit-transition: all .3s ease-out 0s;
+            -moz-transition: all .3s ease-out 0s;
+            -ms-transition: all .3s ease-out 0s;
+            -o-transition: all .3s ease-out 0s;
+            transition: all .3s ease-out 0s;
+        }
+
+        .out {
+            opacity: 0;
+            -webkit-transition: all .3s ease-out 0s;
+            -moz-transition: all .3s ease-out 0s;
+            -ms-transition: all .3s ease-out 0s;
+            -o-transition: all .3s ease-out 0s;
+            transition: all .3s ease-out 0s;
+        }
+
+        .background {
+            -moz-background-size: cover;
+            background-size: cover;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            z-index: 0;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body class="background">
 <div class="container in">
-  <nav>
-    <ul>
-      <li><a id="home-link" href="#homeView">Home</a></li>
-      <li><a id="portfolio-link" href="#portfolioView">Portfolio</a></li>
-      <li><a id="playground-link" href="#playgroundView">Playground</a></li>
-      <li><a id="contact-link" href="#contactView">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <li><a id="home-link" href="#homeView">Home</a></li>
+            <li><a id="portfolio-link" href="#portfolioView">Portfolio</a></li>
+            <li><a id="playground-link" href="#playgroundView">Playground</a></li>
+            <li><a id="contact-link" href="#contactView">Contact</a></li>
+        </ul>
+    </nav>
 </div>
 <div id="main" class="container"></div>
 
 <script type="text/html" id="home-template">
-  <section id="home">
-    <div class="content">
-      <h1>Hello, I am Todd Baur.</h1>
-      <p>I work in San Francisco as a front end designer and developer using CSS3/HTML5, Javascript, Ruby, and Java&#46;</p>
-      <p>I love working toward people and computers getting along with each other&#46;</p>
-      <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;</p>
-      <p>I keep my memory fresh on <a href="http://www.codecademy.com/arrayrockstar44013">codecademy</a>, or <a href="http://stackoverflow.com/users/898905/todd-baur" target="_blank">stackoverflow</a>&#46;</p>
-      <p>Sometimes you can find me attending or organizing events with <a href="http://www.cascadesf.com" target="_blank">CascadeSF</a>&#46; Otherwise I'm found gardening, bicycling, or being as social as possible&#46;</p>
-      <p>This site is dedicated to my family for the years of support and tireless love, and peers for allowing me to give back to one of the most challenging careers in the world&#46;</p>
-    </div>
-  </section>
+    <section id="home">
+        <div class="content">
+            <h1>Hello, I am Todd Baur.</h1>
+
+            <p>I work in San Francisco as a front end designer and developer using CSS3/HTML5, Javascript, Ruby, and
+                Java&#46;</p>
+
+            <p>I love working toward people and computers getting along with each other&#46;</p>
+
+            <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;
+            </p>
+
+            <p>I keep my memory fresh on <a href="http://www.codecademy.com/arrayrockstar44013">codecademy</a>, or <a
+                    href="http://stackoverflow.com/users/898905/todd-baur" target="_blank">stackoverflow</a>&#46;</p>
+
+            <p>Sometimes you can find me attending or organizing events with <a href="http://www.cascadesf.com"
+                                                                                target="_blank">CascadeSF</a>&#46;
+                Otherwise I'm found gardening, bicycling, or being as social as possible&#46;</p>
+
+            <p>This site is dedicated to my family for the years of support and tireless love, and peers for allowing me
+                to give back to one of the most challenging careers in the world&#46;</p>
+        </div>
+    </section>
 </script>
 <script type="text/html" id="portfolio-template">
-  <section id="portfolio">
-    <div class="portfolio content">
-      <ul>
-        <li>
-          <a class="company" href="https://www.stubhub.com" target="_blank">StubHub</a>
-          <div class="company-title">Javascript Performance Engineer</div>
-          <div class="company-description">
-            <p>Investigated various aspects of performance impacting customer experience. Responsible for minification of javascript and CSS assets for entire front end product. Worked closely with release engineers to create Jenkins jobs for the company to deploy UI independent of back-end code. Developed responsive mobile shopping cart checkout experience. Developed several reusable javascript components. Taught engineers about javascript software patterns and best practices. Experience with Backbone.js, Node, and associated tools/frameworks.
-        </li>
-        <li>
-          <a class="company" href="http://www.byliner.com" target="_blank">Byliner, Inc.</a>
-          <div class="company-title">Software Developer</div>
-          <div class="company-description">
-            <p>Developed XML Ingest system, allowing the company to quickly deliver more content to the customers. The system allowed for authenticated cross domain uploads and stored the files on Amazon S3. Developed HTML/CSS responsive interfaces supporting marketing campaigns and features on the consumer facing site.</p>
-          </div>
-        </li>
-        <li>
-          <a class="company" href="http://www.toadkicker.com">Freelance Designer/Developer</a>
-          <div class="company-title">Designer/Developer</div>
-          <div class="company-description">
-            <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a seven month project with Tesla Motors delivering a custom application that reported on the status of the assembly line's production.</p>
-          </div>
-        </li>
-        <li>
-          <a class="company" href="http://www.roamlocal.com" target="_blank">Roamlocal</a>
-          <div class="company-title">Designer/Developer</div>
-          <div class="company-description">
-            <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad presentation. The site is designed to portray a post card on a table. The logo was custom drawn using Illustrator and then used Photoshop to remove the original lettering. The site enables customers to schedule tours. It is backed by a complete admin tool. Written using Ruby on Rails, HTML5, CSS3, and jQuery.</p>
-          </div>
-        </li>
-        <li>
-          <a class="company" href="http://www.paypal.com" target="_blank">Paypal, Inc.</a>
-          <div class="company-title">Front End Engineer</div>
-          <div class="company-description">
-            <p>Worked as a front end developer and UX engineer. Responsible for product design and development of Paypal's Customer Service Application. Developed <a href="http://shopping.paypal.com" target="_blank">shopping.paypal.com</a>, a multi-tenant site providing branded shopping experiences for Paypal and its key partners. Also did some good work on <a href="http://www.billmelater.com" target="_blank">billmelater.com</a></p>
-          </div>
-        </li>
-        <li>
-          <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance Institute, Inc.</a>
-          <div class="company-title">Software Engineer</div>
-          <div class="company-description">
-            <p>Sole designer/developer of this site. It is built using DotNetNuke. It has a conference management system, member resource library, and several business integration features.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+    <section id="portfolio">
+        <div class="portfolio content">
+            <ul>
+                <li>
+                    <a class="company" href="https://www.stubhub.com" target="_blank">StubHub</a>
+                    <div class="company-title">Javascript Performance Engineer</div>
+                    <div class="company-description">
+                        <p>Investigated various aspects of performance impacting customer experience. Responsible for
+                            minification of javascript and CSS assets for entire front end product. Worked closely with
+                            release engineers to create Jenkins jobs for the company to deploy UI independent of
+                            back-end code. Developed responsive mobile shopping cart checkout experience. Developed
+                            several reusable javascript components. Taught engineers about javascript software patterns
+                            and best practices. Experience with Backbone.js, Node, and associated tools/frameworks.</p>
+                </li>
+                <li>
+                    <a class="company" href="http://www.byliner.com" target="_blank">Byliner, Inc.</a>
+                    <div class="company-title">Software Developer</div>
+                    <div class="company-description">
+                        <p>Developed XML Ingest system, allowing the company to quickly deliver more content to the
+                            customers. The system allowed for authenticated cross domain uploads and stored the files on
+                            Amazon S3. Developed HTML/CSS responsive interfaces supporting marketing campaigns and
+                            features on the consumer facing site.</p>
+                    </div>
+                </li>
+                <li>
+                    <a class="company" href="http://www.toadkicker.com">Freelance Designer/Developer</a>
+                    <div class="company-title">Designer/Developer</div>
+                    <div class="company-description">
+                        <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a
+                            seven month project with Tesla Motors delivering a custom application that reported on the
+                            status of the assembly line's production.</p>
+                    </div>
+                </li>
+                <li>
+                    <a class="company" href="http://www.roamlocal.com" target="_blank">Roamlocal</a>
+                    <div class="company-title">Designer/Developer</div>
+                    <div class="company-description">
+                        <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad
+                            presentation. The site is designed to portray a post card on a table. The logo was custom
+                            drawn using Illustrator and then used Photoshop to remove the original lettering. The site
+                            enables customers to schedule tours. It is backed by a complete admin tool. Written using
+                            Ruby on Rails, HTML5, CSS3, and jQuery.</p>
+                    </div>
+                </li>
+                <li>
+                    <a class="company" href="http://www.paypal.com" target="_blank">Paypal, Inc.</a>
+                    <div class="company-title">Front End Engineer</div>
+                    <div class="company-description">
+                        <p>Worked as a front end developer and UX engineer. Responsible for product design and
+                            development of Paypal's Customer Service Application. Developed <a
+                                    href="http://shopping.paypal.com" target="_blank">shopping.paypal.com</a>, a
+                            multi-tenant site providing branded shopping experiences for Paypal and its key partners.
+                            Also did some good work on <a href="http://www.billmelater.com" target="_blank">billmelater.com</a>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance
+                        Institute, Inc.</a>
+                    <div class="company-title">Software Engineer</div>
+                    <div class="company-description">
+                        <p>Sole designer/developer of this site. It is built using DotNetNuke. It has a conference
+                            management system, member resource library, and several business integration features.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 </script>
 <script type="text/html" id="contact-template">
-  <section id="contact">
-    <div class="content">
-      <h3>Todd Baur</h3>
-      <p>858-752-1459</p>
-      <p>todd@toadkicker.com</p>
-      <p>2986 Ramona Street</p>
-      <p>Pinole, CA 94564</p>
-    </div>
-  </section>
+    <section id="contact">
+        <div class="content">
+            <h3>Todd Baur</h3>
+
+            <p>858-752-1459</p>
+
+            <p>todd@toadkicker.com</p>
+
+            <p>2986 Ramona Street</p>
+
+            <p>Pinole, CA 94564</p>
+        </div>
+    </section>
 </script>
 <script type="text/html" id="playground-template">
     <section id="playground">
@@ -210,137 +354,148 @@
             <h1>About this site</h1>
         </div>
         <p>I use this site to play with javascript and just have some fun with things.
-        The menu changes color based on what time it is. The values are converted from time to hex, then rgb.
-        I caclulate the complementary color from there and use it for the menu text color.
-        You could say that the current time is half past green.</p>
-        <p>It's also a basic example of using microtemplating. The content is wrapped in script tags that are appended when a menu is clicked.</p>
+            The menu changes color based on what time it is. The values are converted from time to hex, then rgb.
+            I caclulate the complementary color from there and use it for the menu text color.
+            You could say that the current time is half past green.</p>
+
+        <p>It's also a basic example of using microtemplating. The content is wrapped in script tags that are appended
+            when a menu is clicked.</p>
+
         <p>Background images are coming from the top 10 wallpapers on reddit.com. Yay for ajax!</p>
-        <p>Of course, more interesting stuff lives in github. I do keep a number of private repositories, so if you're curious for more just ask me.</p>
+
+        <p>Of course, more interesting stuff lives in github. I do keep a number of private repositories, so if you're
+            curious for more just ask me.</p>
     </section>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript">
-  String.prototype.endsWith = function(suffix) {
-    return this.indexOf(suffix, this.length - suffix.length) !== -1;
-  };
-
-  //lets make some views
-  window.homeView = $("#home-template").html();
-  window.portfolioView = $("#portfolio-template").html();
-  window.contactView = $("#contact-template").html();
-  window.playgroundView = $("#playground-template").html();
-  window.wallpapers = $("#reddit-wallpapers");
-  //and a controller
-  window.controller = function(view){
-    switch(view) {
-      case "#homeView":
-        setActiveNav(view);
-        return $("#main").html(window.homeView);
-      case "#portfolioView":
-        setActiveNav(view);
-        return $("#main").html(window.portfolioView);
-      case "#contactView":
-        setActiveNav(view);
-        return $("#main").html(window.contactView);
-      case "#playgroundView":
-        setActiveNav(view);
-        return $("#main").html(window.playgroundView);
-    }
-  };
-
-  setActiveNav = function(target) {
-    //clear the active class from it
-    $('nav a').removeClass('active');
-    //maybe we don't have a hashtag in the url yet?
-    if (window.location.hash == "") {
-      $("nav a[href='#homeView']").addClass("active")
+    String.prototype.endsWith = function (suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
-    //lets make sure we got the target argument
-    if(target !== undefined) {
-      $("nav a[href=" + target + "]").addClass("active");
-    } else {
-      $("nav a[href=" + window.location.hash + "]").addClass("active");
-    }
-  };
 
-  randomImages = [];
-  populateWallpaperPicker = function() {
-    if(randomImages.length > 0) {
-      randomImages.forEach(function(img) {
-        $("#wallpaper-picker").append('<option value="'+ img + '">'+img+'</option>');
-      });
-    } else {
-      $("#wallpaper-picker").append('<option value="reload">Get New Wallpaper!</option>');
-    }
-    $("#wallpaper-picker").val($("body").data("imageUrl"));
-  };
-
-  getBackgroundImages = function() {
-    $.getJSON("http://www.reddit.com/r/wallpapers/.json?jsonp=?", function(result) {
-      result.data.children.filter(function(row) {
-        if(row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
-          randomImages.push(row.data.url);
+    //lets make some views
+    window.homeView = $("#home-template").html();
+    window.portfolioView = $("#portfolio-template").html();
+    window.contactView = $("#contact-template").html();
+    window.playgroundView = $("#playground-template").html();
+    window.wallpapers = $("#reddit-wallpapers");
+    //and a controller
+    window.controller = function (view) {
+        switch (view) {
+            case "#homeView":
+                setActiveNav(view);
+                return $("#main").html(window.homeView);
+            case "#portfolioView":
+                setActiveNav(view);
+                return $("#main").html(window.portfolioView);
+            case "#contactView":
+                setActiveNav(view);
+                return $("#main").html(window.contactView);
+            case "#playgroundView":
+                setActiveNav(view);
+                return $("#main").html(window.playgroundView);
         }
-      })
-    }).done(function() { setBackgroundImage(), populateWallpaperPicker() });
-  }
+    };
 
-  setBackgroundImage = function() {
-    pickOne = Math.floor((Math.random()*randomImages.length));
-    $("body").data("imageUrl", randomImages[pickOne])
-    return $("body").css({"background":"url('" + randomImages[pickOne] + "') center center fixed no-repeat"})
-  };
+    setActiveNav = function (target) {
+        //clear the active class from it
+        $('nav a').removeClass('active');
+        //maybe we don't have a hashtag in the url yet?
+        if (window.location.hash == "") {
+            $("nav a[href='#homeView']").addClass("active")
+        }
+        ;
+        //lets make sure we got the target argument
+        if (target !== undefined) {
+            $("nav a[href=" + target + "]").addClass("active");
+        } else {
+            $("nav a[href=" + window.location.hash + "]").addClass("active");
+        }
+    };
 
-  toggleView = function(event) {
-    if(event !== undefined) {
-      event.preventDefault();
+    randomImages = [];
+    populateWallpaperPicker = function () {
+        if (randomImages.length > 0) {
+            randomImages.forEach(function (img) {
+                $("#wallpaper-picker").append('<option value="' + img + '">' + img + '</option>');
+            });
+        } else {
+            $("#wallpaper-picker").append('<option value="reload">Get New Wallpaper!</option>');
+        }
+        $("#wallpaper-picker").val($("body").data("imageUrl"));
+    };
+
+    getBackgroundImages = function () {
+        $.getJSON("http://www.reddit.com/r/wallpapers/.json?jsonp=?", function (result) {
+            result.data.children.filter(function (row) {
+                if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
+                    randomImages.push(row.data.url);
+                }
+            })
+        }).done(function () {
+            setBackgroundImage(), populateWallpaperPicker()
+        });
     }
-    elements = ["#home-link", "#portfolio-link", "#contact-link", "#main", "#copywhatever", "#picker"];
-    var on, off, $el;
-    $el = $("#hide-everything");
-    //things are hidden when on
-    on = function() {
-      $("#hide-everything").html("Show Stuff!");
-      $("footer").animate({"height":"2em", "width":"7em"});
+
+    setBackgroundImage = function () {
+        pickOne = Math.floor((Math.random() * randomImages.length));
+        $("body").data("imageUrl", randomImages[pickOne])
+        return $("body").css({"background": "url('" + randomImages[pickOne] + "') center center fixed no-repeat"})
     };
-    //things are visible when off
-    off = function() {
-      $("#hide-everything").html("Enjoy the View!");
-      $("footer").animate({"height":"4em", "width":"50em"});
+
+    toggleView = function (event) {
+        if (event !== undefined) {
+            event.preventDefault();
+        }
+        elements = ["#home-link", "#portfolio-link", "#playground-link", "#contact-link", "#main", "#copywhatever", "#picker"];
+        var on, off, $el;
+        $el = $("#hide-everything");
+        //things are hidden when on
+        on = function () {
+            $("#hide-everything").html("Show Stuff!");
+            $("footer").animate({"height": "0", "padding": "0"});
+        };
+        //things are visible when off
+        off = function () {
+            $("#hide-everything").html("Enjoy the View!");
+            $("footer").animate({"height": "45px", "padding": "10px"});
+        };
+        if ($el.data("state")) {
+            off();
+        } else {
+            on();
+        }
+        ;
+        $(elements).toggleClass("out", "in");
+        $el.data('state', !$el.data('state'));
     };
-    if($el.data("state")) {
-      off();
-    } else {
-      on();
-    };
-    $(elements).toggleClass("out", "in");
-    $el.data('state', !$el.data('state'));
-  };
 
-  //for when we land on the page
-  $(document).on('ready', null, function() {
-    view = window.location.hash === "" ? "#homeView" : window.location.hash;
-    //i want my hash tag in the url!
-    window.location.hash = view;
-    getBackgroundImages();
-    return window.controller(view);
-  });
+    //for when we land on the page
+    $(document).on('ready', null, function () {
+        view = window.location.hash === "" ? "#homeView" : window.location.hash;
+        //i want my hash tag in the url!
+        window.location.hash = view;
+        getBackgroundImages();
+        return window.controller(view);
+    });
 
-  //and when we click on a nav item
-  $(document).on('click', 'nav a', function(event) {
-    tmplTarget = event.currentTarget.attributes["href"].nodeValue;
-    window.controller(tmplTarget)
-  });
+    //and when we click on a nav item
+    $(document).on('click', 'nav a', function (event) {
+        tmplTarget = event.currentTarget.attributes["href"].nodeValue;
+        window.controller(tmplTarget)
+    });
 
-  $(document).on("change", "#wallpaper-picker", function(event){
-    $("body").data("imageUrl", event.currentTarget.value)
-    $("body").css({"background":"url('" + event.currentTarget.value + "') center center fixed no-repeat"})
-  });
+    $(document).on("change", "#wallpaper-picker", function (event) {
+        $("body").data("imageUrl", event.currentTarget.value)
+        $("body").css({"background": "url('" + event.currentTarget.value + "') center center fixed no-repeat"})
+    });
 
-  $(document).on("click", "#hide-everything", function(event) { toggleView(event); });
+    $(document).on("click", "#hide-everything", function (event) {
+        toggleView(event);
+    });
 
 </script>
-<script>
+<script type="text/javascript">
     //complements of http://stackoverflow.com/questions/1664140/js-function-to-calculate-complementary-colour
     function RGB2HSV(rgb) {
         hsv = new Object();
@@ -412,8 +567,7 @@
     }
 
     //Adding HueShift via Jacob (see comments)
-    function HueShift(h, s)
-    {
+    function HueShift(h, s) {
         h += s;
         while (h >= 360.0) h -= 360.0;
         while (h < 0.0) h += 360.0;
@@ -429,48 +583,56 @@
     }
     //thanks StackOverflow//
 
-    function hexToRGB(hex){
+    function hexToRGB(hex) {
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return {r:parseInt(result[1], 16),g:parseInt(result[2], 16),b:parseInt(result[3], 16)};
+        return {r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16)};
     }
 
-    function refreshColor()
-    {
+    function refreshColor() {
         x = 1;  // x = seconds
         var d = new Date()
         var h = d.getHours();
         var m = d.getMinutes();
         var s = d.getSeconds();
 
-        if (h<=9) {h = '0'+h};
-        if (m<=9) {m = '0'+m};
-        if (s<=9) {s = '0'+s};
+        if (h <= 9) {
+            h = '0' + h
+        }
+        ;
+        if (m <= 9) {
+            m = '0' + m
+        }
+        ;
+        if (s <= 9) {
+            s = '0' + s
+        }
+        ;
 
         //since the background color is changing, lets use the complementary color for the text
-        temprgb = hexToRGB(h+m+s);
+        hex = h.toString() + m.toString() + s.toString();
+        temprgb = hexToRGB(hex);
         temphsv = RGB2HSV(temprgb);
         temphsv.hue = HueShift(temphsv.hue, 180.0);
         tempcomp = HSV2RGB(temphsv);
-        primary = "rgb("+temprgb.r+","+temprgb.g+","+temprgb.b+")";
-        complement = "rgb("+tempcomp.r+","+tempcomp.g+","+tempcomp.b+")";
+        primary = "rgb(" + temprgb.r + "," + temprgb.g + "," + temprgb.b + ")";
+        complement = "rgb(" + tempcomp.r + "," + tempcomp.g + "," + tempcomp.b + ")";
 
-        $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color" : complement });
-        $("nav ul li a:not('.active')").css({"background-color": complement, "color" : primary });
+        $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color": complement });
+        $("nav ul li a:not('.active')").css({"background-color": complement, "color": primary });
 
-        setTimeout(refreshColor, x*1000);
+        setTimeout(refreshColor, x * 1000);
     }
 
     refreshColor(); // execute color changing menu
 </script>
 <footer>
-<a id="hide-everything" href="#hideView">Enjoy the View!</a>
-<div>
-  <p id="copywhatever">&copy; 2014 Todd Baur. Background images provide by reddit.com &#9786;</p>
-  <div id="picker">
-    <label for="wallpaper-picker">Pick a background:</label>
-    <select id="wallpaper-picker"></select>
-  </div>
-</div>
+    <div id="picker">
+        <p id="copywhatever">&copy; 2014 Todd Baur. Background images provide by reddit.com &#9786;
+            <label for="wallpaper-picker">Pick a background:</label>
+            <select id="wallpaper-picker"></select>
+        </p>
+    </div>
 </footer>
+<a id="hide-everything" href="#hideView">Enjoy the View!</a>
 </body>
 </html>
