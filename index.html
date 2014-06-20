@@ -40,6 +40,9 @@
             nav ul li a {
                 padding: 8px 10px;
             }
+            #hide-everything {
+                display: none;
+            }
         }
 
         @media (min-width: 641px) and (max-width: 800px) {
@@ -56,9 +59,6 @@
             }
             nav ul li a {
                 padding: 10px;
-            }
-            #hide-everything {
-                top: 10px;
             }
         }
 
@@ -95,7 +95,10 @@
                 padding: 10px;
             }
         }
-
+        .clear {
+            clear: both;
+            height: 1px;
+        }
         #main section {
             position: absolute;
             padding: 0 10px;
@@ -183,10 +186,11 @@
         }
 
         #hide-everything, #hide-everything:visited {
-            float: right;
             -moz-transform: rotate(270deg);
             -o-transform: rotate(270deg);
             -webkit-transform: rotate(-90deg);
+            position: absolute;
+            float: right;
             right: 0;
             top: 45px;
             color: #fff;
@@ -239,9 +243,10 @@
             <li><a id="contact-link" href="#contactView">Contact</a></li>
         </ul>
     </nav>
+    <a id="hide-everything" href="#hideView">Enjoy the View!</a>
 </div>
 <div id="main" class="container"></div>
-
+<div class="clear"></div>
 <script type="text/html" id="home-template">
     <section id="home">
         <div class="content">
@@ -457,12 +462,12 @@
         //things are hidden when on
         on = function () {
             $("#hide-everything").html("Show Stuff!");
-            $("footer").animate({"height": "0", "padding": "0"});
+            $("footer").slideUp();
         };
         //things are visible when off
         off = function () {
             $("#hide-everything").html("Enjoy the View!");
-            $("footer").animate({"height": "45px", "padding": "10px"});
+            $("footer").slideDown();
         };
         if ($el.data("state")) {
             off();
@@ -637,6 +642,5 @@
         </p>
     </div>
 </footer>
-<a id="hide-everything" href="#hideView">Enjoy the View!</a>
 </body>
 </html>
