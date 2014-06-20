@@ -341,6 +341,7 @@
 
 </script>
 <script>
+    //complements of http://stackoverflow.com/questions/1664140/js-function-to-calculate-complementary-colour
     function RGB2HSV(rgb) {
         hsv = new Object();
         max = max3(rgb.r, rgb.g, rgb.b);
@@ -419,20 +420,21 @@
         return h;
     }
 
-    //min max via Hairgami_Master (see comments)
+    //min max via Hairgami_Master
     function min3(a, b, c) {
         return (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
     }
     function max3(a, b, c) {
         return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
     }
+    //thanks StackOverflow//
 
     function hexToRGB(hex){
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
         return {r:parseInt(result[1], 16),g:parseInt(result[2], 16),b:parseInt(result[3], 16)};
     }
 
-    function refreshData()
+    function refreshColor()
     {
         x = 1;  // x = seconds
         var d = new Date()
@@ -455,10 +457,10 @@
         $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color" : complement });
         $("nav ul li a:not('.active')").css({"background-color": complement, "color" : primary });
 
-        setTimeout(refreshData, x*1000);
+        setTimeout(refreshColor, x*1000);
     }
 
-    refreshData(); // execute function
+    refreshColor(); // execute color changing menu
 </script>
 <footer>
 <a id="hide-everything" href="#hideView">Enjoy the View!</a>
