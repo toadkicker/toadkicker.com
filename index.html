@@ -409,6 +409,13 @@
         return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
     }
 
+    function hexToRGB(hex){
+        var r = hex >> 16;
+        var g = hex >> 8 & 0xFF;
+        var b = hex & 0xFF;
+        return {r:r,g:g,b:b};
+    }
+
     function refreshData()
     {
         x = 1;  // x = seconds
@@ -422,15 +429,15 @@
         if (s<=9) {s = '0'+s};
 
         //since the background color is changing, lets use the complementary color for the text
-        temprgb = {r:h,g:m,b:s};
+        temprgb = hexToRGB(h+m+s);
         temphsv = RGB2HSV(temprgb);
         temphsv.hue = HueShift(temphsv.hue, 180.0);
-        temprgb = HSV2RGB(temphsv);
+        tempcomp = HSV2RGB(temphsv);
+        primary = "rgba("+temprgb.r+","+temprgb.g+","+temprgb.b+",0.85)";
+        complement = "rgba("+tempcomp.r+","+tempcomp.g+","+tempcomp.b+",0.85)";
 
-        var colorReversed = 'rgb('+temprgb.r+','+temprgb.g+','+temprgb.b+')';
-
-        $("nav ul li a.active, nav ul li a:hover").css({"background-color": temprgb, "color" : colorReversed });
-        $("nav ul li a:not('.active')").css({"background-color": colorReversed, "color" : temprgb });
+        $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color" : complement });
+        $("nav ul li a:not('.active')").css({"background-color": complement, "color" : primary });
 
         setTimeout(refreshData, x*1000);
     }
