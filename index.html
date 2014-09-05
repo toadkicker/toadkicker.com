@@ -1,237 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Todd Baur's One Page Wonder | Toadkicker.com</title>
-    <style>
-        @import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
+<title>Todd Baur's One Page Wonder | Toadkicker.com</title>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
 
-        @media (min-width: 320px) and (max-width: 480px) {
-            #main section {
-                left: 10px;
-                top: 20px;
-                width: 280px;
-            }
-            nav {
-                position: absolute;
-                left: 10px;
-                top: 0px;
-            }
-            nav ul li {
-                margin: 0px;
-            }
-            nav ul li a {
-                border-radius: 0;
-                padding: 5px 7px;
-            }
-            #hide-everything {
-                display: none;
-            }
-        }
+@media (min-width: 320px) and (max-width: 480px) {
+    #main section {
+        left: 10px;
+        top: 20px;
+        width: 280px;
+    }
 
-        @media (min-width: 481px) and (max-width: 640px) {
-            #main section {
-                left: 20px;
-                width: 360px;
-            }
-            nav {
-                left: 20px;
-                top: 10px;
-            }
-            nav ul li a {
-                padding: 8px 10px;
-            }
-            #hide-everything {
-                display: none;
-            }
-        }
+    nav {
+        position: absolute;
+        left: 10px;
+        top: 0px;
+    }
 
-        @media (min-width: 641px) and (max-width: 800px) {
-            #main section {
-                left: 30px;
-                width: 600px;
-            }
-            nav {
-                left: 30px;
-                top: 10px;
-            }
-            nav ul li {
-                margin: 2px;
-            }
-            nav ul li a {
-                padding: 10px;
-            }
-        }
+    nav ul li {
+        margin: 0px;
+    }
 
-        @media (min-width: 801px) and (max-width: 1024px) {
-            #main section {
-                left: 30px;
-                width: 640px;
-            }
-            nav {
-                left: 30px;
-                top: 10px;
-            }
-            nav ul li {
-                margin: 2px;
-            }
-            nav ul li a {
-                padding: 10px;
-            }
-        }
+    nav ul li a {
+        border-radius: 0;
+        padding: 5px 7px;
+    }
 
-        @media (min-width: 1025px) {
-            #main section {
-                left: 60px;
-                width: 800px;
-            }
-            nav {
-                left: 60px;
-                top: 10px;
-            }
-            nav ul li {
-                margin: 5px 2px;
-            }
-            nav ul li a {
-                padding: 10px;
-            }
-        }
-        .clear {
-            clear: both;
-            height: 1px;
-        }
-        #main section {
-            position: absolute;
-            padding: 0 10px;
-            top: 70px;
-            color: #3e3e3e;
-            z-index: 1;
-            box-shadow: 0 1px 15px #333;
-            background-color: rgba(255, 255, 255, 0.85);
-        }
+    footer {
+        display: none;
+    }
 
-        body {
-            font-family: "Oxygen";
-            font-size: 12.5pt;
-            color: #636363;
-            margin: 0;
-            padding: 0;
-        }
+    #hide-everything {
+        display: none;
+    }
+}
 
-        nav {
-            position: absolute;
-        }
-        nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
+@media (min-width: 481px) and (max-width: 640px) {
+    #main section {
+        left: 20px;
+        width: 360px;
+    }
 
-        nav ul li {
-            display: inline-block;
-            float: left;
-        }
+    nav {
+        left: 20px;
+        top: 10px;
+    }
 
-        nav ul li a {
-            font-family: "Lily Script One";
-            display: block;
-            -moz-transition: all 0.3s ease-out;
-            -o-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-        }
+    nav ul li a {
+        padding: 8px 10px;
+    }
 
-        nav ul li a.active, nav ul li a:hover {
-            -webkit-transition: all 0.3s ease-out;
-            -moz-transition: all 0.3s ease-out;
-            -o-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-        }
+    footer {
+        display: none;
+    }
 
-        #main {
-            max-width: 920px;
-            position: relative;
-        }
+    #hide-everything {
+        display: none;
+    }
+}
 
-        #home h1, #portfolio h1, #contact h1 {
-            font-family: "Julius Sans One";
-        }
+@media (min-width: 641px) and (max-width: 800px) {
+    #main section {
+        left: 30px;
+        width: 600px;
+    }
 
-        #portfolio .portfolio {
-            height: 440px;
-            overflow-y: auto;
-        }
+    nav {
+        left: 30px;
+        top: 10px;
+    }
 
-        #portfolio ul {
-            list-style: none;
-            padding: 0;
-        }
+    nav ul li {
+        margin: 2px;
+    }
 
-        #portfolio ul li {
-            display: inline-table;
-            vertical-align: top;
-            padding: 0 10px 10px 0;
-            width: 33%;
-            min-height: 290px;
-        }
+    nav ul li a {
+        padding: 10px;
+    }
+}
 
-        a.company {
-            font-family: "Julius Sans One";
-        }
+@media (min-width: 801px) and (max-width: 1024px) {
+    #main section {
+        left: 30px;
+        width: 640px;
+    }
 
-        .company-title {
-            font-size: 0.75em;
-        }
+    nav {
+        left: 30px;
+        top: 10px;
+    }
 
-        .company-description {
-            font-size: 0.9em;
-        }
+    nav ul li {
+        margin: 2px;
+    }
 
-        #hide-everything, #hide-everything:visited {
-            -moz-transform: rotate(270deg);
-            -o-transform: rotate(270deg);
-            -webkit-transform: rotate(-90deg);
-            position: absolute;
-            float: right;
-            right: 0;
-            top: 45px;
-            color: #fff;
-            padding: 10px;
-            background: rgba(128, 128, 128, 0.85);
-        }
+    nav ul li a {
+        padding: 10px;
+    }
+}
 
-        .in {
-            opacity: 1;
-            -webkit-transition: all .3s ease-out 0s;
-            -moz-transition: all .3s ease-out 0s;
-            -ms-transition: all .3s ease-out 0s;
-            -o-transition: all .3s ease-out 0s;
-            transition: all .3s ease-out 0s;
-        }
+@media (min-width: 1025px) {
+    #main section {
+        left: 60px;
+        width: 800px;
+    }
 
-        .out {
-            opacity: 0;
-            -webkit-transition: all .3s ease-out 0s;
-            -moz-transition: all .3s ease-out 0s;
-            -ms-transition: all .3s ease-out 0s;
-            -o-transition: all .3s ease-out 0s;
-            transition: all .3s ease-out 0s;
-        }
+    nav {
+        left: 60px;
+        top: 10px;
+    }
 
-        .background {
-            -moz-background-size: cover;
-            background-size: cover;
-        }
+    nav ul li {
+        margin: 5px 2px;
+    }
 
-        footer {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            z-index: 0;
-            padding: 10px;
-        }
-    </style>
+    nav ul li a {
+        padding: 10px;
+    }
+}
+
+.clear {
+    clear: both;
+    height: 1px;
+}
+
+#main section {
+    position: absolute;
+    padding: 0 10px;
+    top: 70px;
+    color: #3e3e3e;
+    z-index: 1;
+    box-shadow: inset 0 1px 5px #333;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    font-family: "Oxygen";
+    font-size: 12.5pt;
+    color: #636363;
+    margin: 0;
+    padding: 0;
+}
+
+footer a, footer a:visited {
+    color: #e0e0e0;
+}
+
+nav {
+    position: absolute;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+}
+
+nav ul li a {
+    font-family: "Lily Script One";
+    display: block;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+#main {
+    max-width: 920px;
+    position: relative;
+}
+
+#home h1, #portfolio h1, #contact h1 {
+    font-family: "Julius Sans One";
+}
+
+#portfolio .portfolio {
+    height: 440px;
+    overflow-y: auto;
+}
+
+#portfolio ul {
+    list-style: none;
+    padding: 0;
+}
+
+#portfolio ul li {
+    display: inline-table;
+    vertical-align: top;
+    padding: 0 10px 10px 0;
+    width: 33%;
+    min-height: 290px;
+}
+
+a.company {
+    font-family: "Julius Sans One";
+}
+
+.company-title {
+    font-size: 0.75em;
+}
+
+.company-description {
+    font-size: 0.9em;
+}
+
+#hide-everything, #hide-everything:visited {
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -webkit-transform: rotate(-90deg);
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 45px;
+    color: #fff;
+    padding: 10px;
+    background: rgba(128, 128, 128, 0.85);
+}
+
+.in {
+    opacity: 1;
+    -webkit-transition: all .3s ease-out 0s;
+    -moz-transition: all .3s ease-out 0s;
+    -ms-transition: all .3s ease-out 0s;
+    -o-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s;
+}
+
+.out {
+    opacity: 0;
+    -webkit-transition: all .3s ease-out 0s;
+    -moz-transition: all .3s ease-out 0s;
+    -ms-transition: all .3s ease-out 0s;
+    -o-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s;
+}
+
+.background {
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    z-index: 0;
+    padding: 10px;
+}
+
+footer #wallpaper-picker {
+    max-width: 250px;
+}
+</style>
 </head>
 <body class="background">
 <div class="container in">
@@ -252,22 +287,24 @@
         <div class="content">
             <h1>Hello, I am Todd Baur.</h1>
 
-            <p>I work in San Francisco as a front end designer and developer using CSS3/HTML5, Javascript, Ruby, and
+            <p>I work as a front end designer and developer using CSS3/HTML5, Javascript, Ruby, and
                 Java&#46;</p>
 
             <p>I love working toward people and computers getting along with each other&#46;</p>
 
-            <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;
-            </p>
+            <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;</p>
 
             <p>I keep my memory fresh on <a href="http://www.codecademy.com/arrayrockstar44013">codecademy</a>, or <a
                     href="http://stackoverflow.com/users/898905/todd-baur" target="_blank">stackoverflow</a>&#46;</p>
 
             <p>Sometimes you can find me attending or organizing events with <a href="http://www.cascadesf.com"
                                                                                 target="_blank">CascadeSF</a>&#46;
-                Otherwise I'm found gardening, bicycling, or being as social as possible&#46;</p>
+                Otherwise I'm found traveling, bicycling, or being as social as possible&#46;</p>
 
-            <p>This site is dedicated to my family for the years of support and tireless love, and peers for allowing me
+            <p>Most of the time I'm traveling around the world. I like to work with teams who share the belief the
+                Internet ties us together. The world is the office. Go see it!</p>
+
+            <p>This site is dedicated to my family for years of support and tireless love, and my peers for allowing me
                 to give back to one of the most challenging careers in the world&#46;</p>
         </div>
     </section>
@@ -278,6 +315,7 @@
             <ul>
                 <li>
                     <a class="company" href="https://www.stubhub.com" target="_blank">StubHub</a>
+
                     <div class="company-title">Javascript Performance Engineer</div>
                     <div class="company-description">
                         <p>Investigated various aspects of performance impacting customer experience. Responsible for
@@ -287,18 +325,10 @@
                             several reusable javascript components. Taught engineers about javascript software patterns
                             and best practices. Experience with Backbone.js, Node, and associated tools/frameworks.</p>
                 </li>
-                <li>
-                    <a class="company" href="http://www.byliner.com" target="_blank">Byliner, Inc.</a>
-                    <div class="company-title">Software Developer</div>
-                    <div class="company-description">
-                        <p>Developed XML Ingest system, allowing the company to quickly deliver more content to the
-                            customers. The system allowed for authenticated cross domain uploads and stored the files on
-                            Amazon S3. Developed HTML/CSS responsive interfaces supporting marketing campaigns and
-                            features on the consumer facing site.</p>
-                    </div>
-                </li>
+
                 <li>
                     <a class="company" href="http://www.toadkicker.com">Freelance Designer/Developer</a>
+
                     <div class="company-title">Designer/Developer</div>
                     <div class="company-description">
                         <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a
@@ -308,6 +338,7 @@
                 </li>
                 <li>
                     <a class="company" href="http://www.roamlocal.com" target="_blank">Roamlocal</a>
+
                     <div class="company-title">Designer/Developer</div>
                     <div class="company-description">
                         <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad
@@ -319,6 +350,7 @@
                 </li>
                 <li>
                     <a class="company" href="http://www.paypal.com" target="_blank">Paypal, Inc.</a>
+
                     <div class="company-title">Front End Engineer</div>
                     <div class="company-description">
                         <p>Worked as a front end developer and UX engineer. Responsible for product design and
@@ -332,6 +364,7 @@
                 <li>
                     <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance
                         Institute, Inc.</a>
+
                     <div class="company-title">Software Engineer</div>
                     <div class="company-description">
                         <p>Sole designer/developer of this site. It is built using DotNetNuke. It has a conference
@@ -347,13 +380,13 @@
         <div class="content">
             <h3>Todd Baur</h3>
 
-            <p>858-752-1459</p>
+            <p>+1 858-752-1459</p>
 
             <p>todd@toadkicker.com</p>
 
-            <p>2986 Ramona Street</p>
+            <p>@toadkicker on twitter</p>
 
-            <p>Pinole, CA 94564</p>
+            <p>I'm sure you can find me if you look.</p>
         </div>
     </section>
 </script>
@@ -369,11 +402,11 @@
 
         <p>It's also a basic example of using microtemplating. The content is wrapped in script tags that are appended
             when a menu is clicked.</p>
+        <p>A couple front-end devs commented I should split this up into css,js, and html files.
+            Sometimes the overhead of requests for more files isn't worth it, and in this case it is true.</p>
 
-        <p>Background images are coming from the top 10 wallpapers on reddit.com. Yay for ajax!</p>
-
-        <p>Of course, more interesting stuff lives in github. I do keep a number of private repositories, so if you're
-            curious for more just ask me.</p>
+        <p>Of course, more interesting stuff lives in <a href="https://github.com/toadkicker">github</a>. I do keep a number of private repositories, so if you're
+            curious for secret stuff, just ask me.</p>
     </section>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -431,7 +464,9 @@
         } else {
             $("#wallpaper-picker").append('<option value="reload">Get New Wallpaper!</option>');
         }
-        $("#wallpaper-picker").val($("body").data("imageUrl"));
+        var imgUrl = $("body").data("imageUrl");
+        $("#wallpaper-picker").val(imgUrl);
+        $("#wallpaper-download").attr('href', imgUrl);
     };
 
     getBackgroundImages = function () {
@@ -497,6 +532,7 @@
     $(document).on("change", "#wallpaper-picker", function (event) {
         $("body").data("imageUrl", event.currentTarget.value)
         $("body").css({"background": "url('" + event.currentTarget.value + "') center center fixed no-repeat"})
+        $("#wallpaper-download").attr('href', event.currentTarget.value);
     });
 
     $(document).on("click", "#hide-everything", function (event) {
@@ -607,15 +643,12 @@
         if (h <= 9) {
             h = '0' + h
         }
-        ;
         if (m <= 9) {
             m = '0' + m
         }
-        ;
         if (s <= 9) {
             s = '0' + s
         }
-        ;
 
         //since the background color is changing, lets use the complementary color for the text
         hex = h.toString() + m.toString() + s.toString();
@@ -623,24 +656,38 @@
         temphsv = RGB2HSV(temprgb);
         temphsv.hue = HueShift(temphsv.hue, 180.0);
         tempcomp = HSV2RGB(temphsv);
-        primary = "rgb(" + temprgb.r + "," + temprgb.g + "," + temprgb.b + ")";
-        complement = "rgb(" + tempcomp.r + "," + tempcomp.g + "," + tempcomp.b + ")";
+        primary = "rgba(" + temprgb.r + "," + temprgb.g + "," + temprgb.b + ", 0.75)";
+        complement = "rgba(" + tempcomp.r + "," + tempcomp.g + "," + tempcomp.b + ", 0.75)";
 
-        $("nav ul li a.active, nav ul li a:hover").css({"background-color": primary, "color": complement });
-        $("nav ul li a:not('.active')").css({"background-color": complement, "color": primary });
+        $("nav ul li a.active, nav ul li a:hover").css({"background-color": "rgba(255,255,255, .7)", "color": complement });
+        $("nav ul li a:not('.active')").css({"background-color": complement, "color": "rgba(255,255,255, .7)" });
+
+        $("a#hide-everything").css({"color": "rgb(255,255,255)", "background-color": primary});
 
         setTimeout(refreshColor, x * 1000);
     }
 
     refreshColor(); // execute color changing menu
 </script>
+<script id="twitter-link">!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
 <footer>
+    <p id="copywhatever">&copy; 2014 <a href="https://twitter.com/toadkicker"  data-show-count="false" data-dnt="true">@toadkicker</a>&trade; aka Todd Baur. Background images provide by <a
+            href="http://www.reddit.com/r/wallpapers" target="_blank">reddit.com</a> &#9786;</p>
+
     <div id="picker">
-        <p id="copywhatever">&copy; 2014 Todd Baur. Background images provide by reddit.com &#9786;
-            <label for="wallpaper-picker">Pick a background:</label>
-            <select id="wallpaper-picker"></select>
-        </p>
+        <label for="wallpaper-picker">Pick a background:</label>
+        <select id="wallpaper-picker"></select>
+        <a id="wallpaper-download" href="#" download>Give me it!</a>
     </div>
+
 </footer>
 </body>
 </html>
