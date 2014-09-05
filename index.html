@@ -272,10 +272,10 @@ footer #wallpaper-picker {
 <div class="container in">
     <nav>
         <ul>
-            <li><a id="home-link" href="#homeView">Home</a></li>
-            <li><a id="portfolio-link" href="#portfolioView">Portfolio</a></li>
-            <li><a id="playground-link" href="#playgroundView">Playground</a></li>
-            <li><a id="contact-link" href="#contactView">Contact</a></li>
+            <li><a id="home-link" href="#home">Home</a></li>
+            <li><a id="portfolio-link" href="#portfolio">Portfolio</a></li>
+            <li><a id="playground-link" href="#playground">Playground</a></li>
+            <li><a id="contact-link" href="#contact">Contact</a></li>
         </ul>
     </nav>
     <a id="hide-everything" href="#hideView">Enjoy the View!</a>
@@ -424,16 +424,16 @@ footer #wallpaper-picker {
     //and a controller
     window.controller = function (view) {
         switch (view) {
-            case "#homeView":
+            case "#home":
                 setActiveNav(view);
                 return $("#main").html(window.homeView);
-            case "#portfolioView":
+            case "#portfolio":
                 setActiveNav(view);
                 return $("#main").html(window.portfolioView);
-            case "#contactView":
+            case "#contact":
                 setActiveNav(view);
                 return $("#main").html(window.contactView);
-            case "#playgroundView":
+            case "#playground":
                 setActiveNav(view);
                 return $("#main").html(window.playgroundView);
         }
@@ -444,7 +444,7 @@ footer #wallpaper-picker {
         $('nav a').removeClass('active');
         //maybe we don't have a hashtag in the url yet?
         if (window.location.hash == "") {
-            $("nav a[href='#homeView']").addClass("active")
+            $("nav a[href='#home']").addClass("active")
         }
         ;
         //lets make sure we got the target argument
@@ -496,12 +496,12 @@ footer #wallpaper-picker {
         $el = $("#hide-everything");
         //things are hidden when on
         on = function () {
-            $("#hide-everything").html("Show Stuff!");
+            $el.html("Show Stuff!");
             $("footer").slideUp();
         };
         //things are visible when off
         off = function () {
-            $("#hide-everything").html("Enjoy the View!");
+            $el.html("Enjoy the View!");
             $("footer").slideDown();
         };
         if ($el.data("state")) {
@@ -516,7 +516,7 @@ footer #wallpaper-picker {
 
     //for when we land on the page
     $(document).on('ready', null, function () {
-        view = window.location.hash === "" ? "#homeView" : window.location.hash;
+        view = window.location.hash === "" ? "#home" : window.location.hash;
         //i want my hash tag in the url!
         window.location.hash = view;
         getBackgroundImages();
