@@ -1,272 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Todd Baur's One Page Wonder | Toadkicker.com</title>
-<style>
-@import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
+    <title>Todd Baur's One Page Wonder | Toadkicker.com</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
 
-@media (min-width: 320px) and (max-width: 480px) {
-    #main section {
-        left: 10px;
-        top: 20px;
-        width: 280px;
-    }
+        @media (min-width: 320px) and (max-width: 480px) {
+            #main section {
+                left: 10px;
+                top: 20px;
+                width: 280px;
+            }
 
-    nav {
-        position: absolute;
-        left: 10px;
-        top: 0px;
-    }
+            nav {
+                position: absolute;
+                left: 10px;
+                top: 0px;
+            }
 
-    nav ul li {
-        margin: 0px;
-    }
+            nav ul li {
+                margin: 0px;
+            }
 
-    nav ul li a {
-        border-radius: 0;
-        padding: 5px 7px;
-    }
+            nav ul li a {
+                border-radius: 0;
+                padding: 5px 7px;
+            }
 
-    footer {
-        display: none;
-    }
+            footer {
+                display: none;
+            }
 
-    #hide-everything {
-        display: none;
-    }
-}
+            #hide-everything {
+                display: none;
+            }
+        }
 
-@media (min-width: 481px) and (max-width: 640px) {
-    #main section {
-        left: 20px;
-        width: 360px;
-    }
+        @media (min-width: 481px) and (max-width: 640px) {
+            #main section {
+                left: 20px;
+                width: 360px;
+            }
 
-    nav {
-        left: 20px;
-        top: 10px;
-    }
+            nav {
+                left: 20px;
+                top: 10px;
+            }
 
-    nav ul li a {
-        padding: 8px 10px;
-    }
+            nav ul li a {
+                padding: 8px 10px;
+            }
 
-    footer {
-        display: none;
-    }
+            footer {
+                display: none;
+            }
 
-    #hide-everything {
-        display: none;
-    }
-}
+            #hide-everything {
+                display: none;
+            }
+        }
 
-@media (min-width: 641px) and (max-width: 800px) {
-    #main section {
-        left: 30px;
-        width: 600px;
-    }
+        @media (min-width: 641px) and (max-width: 800px) {
+            #main section {
+                left: 30px;
+                width: 600px;
+            }
 
-    nav {
-        left: 30px;
-        top: 10px;
-    }
+            nav {
+                left: 30px;
+                top: 10px;
+            }
 
-    nav ul li {
-        margin: 2px;
-    }
+            nav ul li {
+                margin: 2px;
+            }
 
-    nav ul li a {
-        padding: 10px;
-    }
-}
+            nav ul li a {
+                padding: 10px;
+            }
+        }
 
-@media (min-width: 801px) and (max-width: 1024px) {
-    #main section {
-        left: 30px;
-        width: 640px;
-    }
+        @media (min-width: 801px) and (max-width: 1024px) {
+            #main section {
+                left: 30px;
+                width: 640px;
+            }
 
-    nav {
-        left: 30px;
-        top: 10px;
-    }
+            nav {
+                left: 30px;
+                top: 10px;
+            }
 
-    nav ul li {
-        margin: 2px;
-    }
+            nav ul li {
+                margin: 2px;
+            }
 
-    nav ul li a {
-        padding: 10px;
-    }
-}
+            nav ul li a {
+                padding: 10px;
+            }
+        }
 
-@media (min-width: 1025px) {
-    #main section {
-        left: 60px;
-        width: 800px;
-    }
+        @media (min-width: 1025px) {
+            #main section {
+                left: 60px;
+                width: 800px;
+            }
 
-    nav {
-        left: 60px;
-        top: 10px;
-    }
+            nav {
+                left: 60px;
+                top: 10px;
+            }
 
-    nav ul li {
-        margin: 5px 2px;
-    }
+            nav ul li {
+                margin: 5px 2px;
+            }
 
-    nav ul li a {
-        padding: 10px;
-    }
-}
+            nav ul li a {
+                padding: 10px;
+            }
+        }
 
-.clear {
-    clear: both;
-    height: 1px;
-}
+        .clear {
+            clear: both;
+            height: 1px;
+        }
 
-#main section {
-    position: absolute;
-    padding: 0 10px;
-    top: 70px;
-    color: #3e3e3e;
-    z-index: 1;
-    box-shadow: inset 0 1px 5px #333;
-    background-color: rgba(255, 255, 255, 0.85);
-}
+        #main section {
+            position: absolute;
+            padding: 0 10px;
+            top: 70px;
+            color: #3e3e3e;
+            z-index: 1;
+            box-shadow: inset 0 1px 5px #333;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
 
-body {
-    font-family: "Oxygen";
-    font-size: 12.5pt;
-    color: #636363;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: "Oxygen";
+            font-size: 12.5pt;
+            color: #636363;
+            margin: 0;
+            padding: 0;
+        }
 
-footer a, footer a:visited {
-    color: #e0e0e0;
-}
+        body.loading {
+            background: url("heart.svg");
+        }
 
-nav {
-    position: absolute;
-}
+        footer a, footer a:visited {
+            color: #e0e0e0;
+        }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+        nav {
+            position: absolute;
+        }
 
-nav ul li {
-    display: inline-block;
-    float: left;
-}
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-nav ul li a {
-    font-family: "Lily Script One";
-    display: block;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
+        nav ul li {
+            display: inline-block;
+            float: left;
+        }
 
-nav ul li a.active, nav ul li a:hover {
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
+        nav ul li a {
+            font-family: "Lily Script One";
+            display: block;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
 
-#main {
-    max-width: 920px;
-    position: relative;
-}
+        nav ul li a.active, nav ul li a:hover {
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
 
-#home h1, #portfolio h1, #contact h1 {
-    font-family: "Julius Sans One";
-}
+        #main {
+            max-width: 920px;
+            position: relative;
+        }
 
-#portfolio .portfolio {
-    height: 440px;
-    overflow-y: auto;
-}
+        #home h1, #portfolio h1, #contact h1 {
+            font-family: "Julius Sans One";
+        }
 
-#portfolio ul {
-    list-style: none;
-    padding: 0;
-}
+        #portfolio .portfolio {
+            height: 440px;
+            overflow-y: auto;
+        }
 
-#portfolio ul li {
-    display: inline-table;
-    vertical-align: top;
-    padding: 0 10px 10px 0;
-    width: 33%;
-    min-height: 290px;
-}
+        #portfolio ul {
+            list-style: none;
+            padding: 0;
+        }
 
-a.company {
-    font-family: "Julius Sans One";
-}
+        #portfolio ul li {
+            display: inline-table;
+            vertical-align: top;
+            padding: 0 10px 10px 0;
+            width: 33%;
+            min-height: 290px;
+        }
 
-.company-title {
-    font-size: 0.75em;
-}
+        a.company {
+            font-family: "Julius Sans One";
+        }
 
-.company-description {
-    font-size: 0.9em;
-}
+        .company-title {
+            font-size: 0.75em;
+        }
 
-#hide-everything, #hide-everything:visited {
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -webkit-transform: rotate(-90deg);
-    position: absolute;
-    float: right;
-    right: 0;
-    top: 45px;
-    color: #fff;
-    padding: 10px;
-    background: rgba(128, 128, 128, 0.85);
-}
+        .company-description {
+            font-size: 0.9em;
+        }
 
-.in {
-    opacity: 1;
-    -webkit-transition: all .3s ease-out 0s;
-    -moz-transition: all .3s ease-out 0s;
-    -ms-transition: all .3s ease-out 0s;
-    -o-transition: all .3s ease-out 0s;
-    transition: all .3s ease-out 0s;
-}
+        #hide-everything, #hide-everything:visited {
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            -webkit-transform: rotate(-90deg);
+            position: absolute;
+            float: right;
+            right: 0;
+            top: 45px;
+            color: #fff;
+            padding: 10px;
+            background: rgba(128, 128, 128, 0.85);
+        }
 
-.out {
-    opacity: 0;
-    -webkit-transition: all .3s ease-out 0s;
-    -moz-transition: all .3s ease-out 0s;
-    -ms-transition: all .3s ease-out 0s;
-    -o-transition: all .3s ease-out 0s;
-    transition: all .3s ease-out 0s;
-}
+        .in {
+            opacity: 1;
+            -webkit-transition: all .3s ease-out 0s;
+            -moz-transition: all .3s ease-out 0s;
+            -ms-transition: all .3s ease-out 0s;
+            -o-transition: all .3s ease-out 0s;
+            transition: all .3s ease-out 0s;
+        }
 
-.background {
-    -moz-background-size: cover;
-    background-size: cover;
-}
+        .out {
+            opacity: 0;
+            -webkit-transition: all .3s ease-out 0s;
+            -moz-transition: all .3s ease-out 0s;
+            -ms-transition: all .3s ease-out 0s;
+            -o-transition: all .3s ease-out 0s;
+            transition: all .3s ease-out 0s;
+        }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    z-index: 0;
-    padding: 10px;
-}
+        .background {
+            -moz-background-size: cover;
+            background-size: cover;
+        }
 
-footer #wallpaper-picker {
-    max-width: 250px;
-}
-</style>
+        footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            z-index: 0;
+            padding: 10px;
+        }
+
+        footer #wallpaper-picker {
+            max-width: 250px;
+        }
+
+        .progress {
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        }
+        .progress-bar {
+            float: left;
+            width: 0;
+            height: 100%;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: #337ab7;
+            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            -webkit-transition: width .6s ease;
+            -o-transition: width .6s ease;
+            transition: width .6s ease;
+        }
+        .progress-striped .progress-bar,
+        .progress-bar-striped {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            -webkit-background-size: 40px 40px;
+            background-size: 40px 40px;
+        }
+        .progress.active .progress-bar,
+        .progress-bar.active {
+            -webkit-animation: progress-bar-stripes 2s linear infinite;
+            -o-animation: progress-bar-stripes 2s linear infinite;
+            animation: progress-bar-stripes 2s linear infinite;
+        }
+        .progress-bar-success {
+            background-color: #5cb85c;
+        }
+        .progress-striped .progress-bar-success {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-info {
+            background-color: #5bc0de;
+        }
+        .progress-striped .progress-bar-info {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-warning {
+            background-color: #f0ad4e;
+        }
+        .progress-striped .progress-bar-warning {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-danger {
+            background-color: #d9534f;
+        }
+        .progress-striped .progress-bar-danger {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body class="background">
 <div class="container in">
@@ -281,6 +357,13 @@ footer #wallpaper-picker {
     <a id="hide-everything" href="#hideView">Enjoy the View!</a>
 </div>
 <div id="main" class="container"></div>
+<div id="progress">
+    <div class="progress progress-bar-striped active">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+            0%
+        </div>
+    </div>
+</div>
 <div class="clear"></div>
 <script type="text/html" id="home-template">
     <section id="home">
@@ -292,7 +375,8 @@ footer #wallpaper-picker {
 
             <p>I love working toward people and computers getting along with each other&#46;</p>
 
-            <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;</p>
+            <p>I stash code and other kinds of craziness on <a href="https://www.github.com/toadkicker" target="_blank">github</a>&#46;
+            </p>
 
             <p>I keep my memory fresh on <a href="http://www.codecademy.com/arrayrockstar44013">codecademy</a>, or <a
                     href="http://stackoverflow.com/users/898905/todd-baur" target="_blank">stackoverflow</a>&#46;</p>
@@ -324,6 +408,7 @@ footer #wallpaper-picker {
                             back-end code. Developed responsive mobile shopping cart checkout experience. Developed
                             several reusable javascript components. Taught engineers about javascript software patterns
                             and best practices. Experience with Backbone.js, Node, and associated tools/frameworks.</p>
+                    </div>
                 </li>
 
                 <li>
@@ -402,148 +487,186 @@ footer #wallpaper-picker {
 
         <p>It's also a basic example of using microtemplating. The content is wrapped in script tags that are appended
             when a menu is clicked.</p>
+
         <p>A couple front-end devs commented I should split this up into css,js, and html files.
             Sometimes the overhead of requests for more files isn't worth it, and in this case it is true.</p>
 
-        <p>Of course, more interesting stuff lives in <a href="https://github.com/toadkicker">github</a>. I do keep a number of private repositories, so if you're
+        <p>Of course, more interesting stuff lives in <a href="https://github.com/toadkicker">github</a>. I do keep a
+            number of private repositories, so if you're
             curious for secret stuff, just ask me.</p>
     </section>
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript">
+
     String.prototype.endsWith = function (suffix) {
         return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
 
-    //lets make some views
-    window.homeView = $("#home-template").html();
-    window.portfolioView = $("#portfolio-template").html();
-    window.contactView = $("#contact-template").html();
-    window.playgroundView = $("#playground-template").html();
-    window.wallpapers = $("#reddit-wallpapers");
-    //and a controller
-    window.controller = function (view) {
-        switch (view) {
-            case "#home":
-                setActiveNav(view);
-                return $("#main").html(window.homeView);
-            case "#portfolio":
-                setActiveNav(view);
-                return $("#main").html(window.portfolioView);
-            case "#contact":
-                setActiveNav(view);
-                return $("#main").html(window.contactView);
-            case "#playground":
-                setActiveNav(view);
-                return $("#main").html(window.playgroundView);
-        }
-    };
+    var Toadkicker = (function ($) {
+        return {
+            init: function () {
+                //EVENTS
 
-    setActiveNav = function (target) {
-        //clear the active class from it
-        $('nav a').removeClass('active');
-        //maybe we don't have a hashtag in the url yet?
-        if (window.location.hash == "") {
-            $("nav a[href='#home']").addClass("active")
-        }
-        ;
-        //lets make sure we got the target argument
-        if (target !== undefined) {
-            $("nav a[href=" + target + "]").addClass("active");
-        } else {
-            $("nav a[href=" + window.location.hash + "]").addClass("active");
-        }
-    };
+                //for when we land on the page
+                $(document).on('ready', null, function () {
+                    var view = window.location.hash === "" ? "#home" : window.location.hash;
+                    //i want my hash tag in the url!
+                    window.location.hash = view;
+                    Toadkicker.getBackgroundImages();
+                    return Toadkicker.controller(view);
+                });
 
-    randomImages = [];
-    populateWallpaperPicker = function () {
-        if (randomImages.length > 0) {
-            randomImages.forEach(function (img) {
-                $("#wallpaper-picker").append('<option value="' + img + '">' + img + '</option>');
-            });
-        } else {
-            $("#wallpaper-picker").append('<option value="reload">Get New Wallpaper!</option>');
-        }
-        var imgUrl = $("body").data("imageUrl");
-        $("#wallpaper-picker").val(imgUrl);
-        $("#wallpaper-download").attr('href', imgUrl);
-    };
+                //and when we click on a nav item
+                $(document).on('click', 'nav a', function (event) {
+                    var tmplTarget = event.currentTarget.attributes["href"].nodeValue;
+                    Toadkicker.controller(tmplTarget)
+                });
 
-    getBackgroundImages = function () {
-        $.getJSON("http://www.reddit.com/r/wallpapers/.json?jsonp=?", function (result) {
-            result.data.children.filter(function (row) {
-                if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
-                    randomImages.push(row.data.url);
+                $(document).on("change", "#wallpaper-picker", function (event) {
+                    Toadkicker.$body.data("imageUrl", event.currentTarget.value)
+                    Toadkicker.$body.css({"background": "url('" + event.currentTarget.value + "') center center fixed no-repeat"})
+                    $("#wallpaper-download").attr('href', event.currentTarget.value);
+                });
+
+                $(document).on("click", "#hide-everything", function (event) {
+                    Toadkicker.toggleView(event);
+                });
+            },
+            randomImages: [],
+            $body: $("body"),
+            progressElem: $("#progress"),
+            homeView: $("#home-template").html(),
+            portfolioView: $("#portfolio-template").html(),
+            contactView: $("#contact-template").html(),
+            playgroundView: $("#playground-template").html(),
+            wallpapers: $("#reddit-wallpapers"),
+            controller: function (view) {
+                var $main = $("#main");
+                switch (view) {
+                    case "#home":
+                        Toadkicker.setActiveNav(view);
+                        return $main.html(Toadkicker.homeView);
+                    case "#portfolio":
+                        Toadkicker.setActiveNav(view);
+                        return $main.html(Toadkicker.portfolioView);
+                    case "#contact":
+                        Toadkicker.setActiveNav(view);
+                        return $main.html(Toadkicker.contactView);
+                    case "#playground":
+                        Toadkicker.setActiveNav(view);
+                        return $main.html(Toadkicker.playgroundView);
                 }
-            })
-        }).done(function () {
-            setBackgroundImage(), populateWallpaperPicker()
-        });
-    }
+            },
+            setActiveNav: function (target) {
+                //clear the active class from it
+                $('nav a').removeClass('active');
+                //maybe we don't have a hashtag in the url yet?
+                if (window.location.hash == "") {
+                    $("nav a[href='#home']").addClass("active")
+                }
+                //lets make sure we got the target argument
+                if (target !== undefined) {
+                    $("nav a[href=" + target + "]").addClass("active");
+                } else {
+                    $("nav a[href=" + window.location.hash + "]").addClass("active");
+                }
+            },
+            populateWallpaperPicker: function () {
+                var $wallpaper = $("#wallpaper-picker");
+                var imgUrl = Toadkicker.$body.data("imageUrl");
+                if (Toadkicker.randomImages.length > 0) {
+                    Toadkicker.randomImages.forEach(function (img) {
+                        $wallpaper.append('<option value="' + img + '">' + img + '</option>');
+                    });
+                } else {
+                    $wallpaper.append('<option value="reload">Get New Wallpapers!</option>');
+                }
+                $wallpaper.val(imgUrl);
+                $("#wallpaper-download").attr('href', imgUrl);
+            },
+            getBackgroundImages: function () {
+                var url = "http://www.reddit.com/r/wallpapers.json?jsonp=?";
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    async: true,
+                    url: url,
+                    cache: false,
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                        console.log(thrownError);
+                    },
+                    xhr: function () {
+                        var xhr = new window.XMLHttpRequest();
+                        //Download progress
+                        xhr.addEventListener("progress", function (evt) {
+                            Toadkicker.progressElem.show();
+                            Toadkicker.$body.addClass('loading');
+                            console.log(evt.lengthComputable);
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                Toadkicker.progressElem.querySelector('.progress-bar').html(Math.round(percentComplete * 100) + "%");
+                            }
+                        }, false);
+                        return xhr;
+                    },
+                    complete: function () {
+                        Toadkicker.$body.removeClass('loading');
+                        Toadkicker.progressElem.hide();
+                    },
+                    success: function (result) {
+                        result.data.children.filter(function (row) {
+                            if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
+                                Toadkicker.randomImages.push(row.data.url);
+                            }
+                        });
+                        Toadkicker.setBackgroundImage();
+                        Toadkicker.populateWallpaperPicker();
+                    }
+                });
+            },
+            setBackgroundImage: function () {
+                var pickOne = Math.floor((Math.random() * Toadkicker.randomImages.length));
+                if (Toadkicker.randomImages.length > 0) {
+                    Toadkicker.$body.data("imageUrl", Toadkicker.randomImages[pickOne]);
+                    Toadkicker.$body.css({"background": "url('" + Toadkicker.randomImages[pickOne] + "') center center fixed no-repeat"});
+                } else {
+                    Toadkicker.$body.css({"background": "#000000"});
+                }
 
-    setBackgroundImage = function () {
-        pickOne = Math.floor((Math.random() * randomImages.length));
-        $("body").data("imageUrl", randomImages[pickOne])
-        return $("body").css({"background": "url('" + randomImages[pickOne] + "') center center fixed no-repeat"})
-    };
-
-    toggleView = function (event) {
-        if (event !== undefined) {
-            event.preventDefault();
+            },
+            toggleView: function (event) {
+                if (event !== undefined) {
+                    event.preventDefault();
+                }
+                var elements = ["#home-link", "#portfolio-link", "#playground-link", "#contact-link", "#main", "#copywhatever", "#picker"];
+                var on, off, $el;
+                $el = $("#hide-everything");
+                //things are hidden when on
+                on = function () {
+                    $el.html("Show Stuff!");
+                    $("footer").slideUp();
+                };
+                //things are visible when off
+                off = function () {
+                    $el.html("Enjoy the View!");
+                    $("footer").slideDown();
+                };
+                if ($el.data("state")) {
+                    off();
+                } else {
+                    on();
+                }
+                $(elements.join()).toggleClass("out", "in");
+                $el.data('state', !$el.data('state'));
+            }
         }
-        elements = ["#home-link", "#portfolio-link", "#playground-link", "#contact-link", "#main", "#copywhatever", "#picker"];
-        var on, off, $el;
-        $el = $("#hide-everything");
-        //things are hidden when on
-        on = function () {
-            $el.html("Show Stuff!");
-            $("footer").slideUp();
-        };
-        //things are visible when off
-        off = function () {
-            $el.html("Enjoy the View!");
-            $("footer").slideDown();
-        };
-        if ($el.data("state")) {
-            off();
-        } else {
-            on();
-        }
-        ;
-        $(elements).toggleClass("out", "in");
-        $el.data('state', !$el.data('state'));
-    };
+    })(window.jQuery);
 
-    //for when we land on the page
-    $(document).on('ready', null, function () {
-        view = window.location.hash === "" ? "#home" : window.location.hash;
-        //i want my hash tag in the url!
-        window.location.hash = view;
-        getBackgroundImages();
-        return window.controller(view);
-    });
 
-    //and when we click on a nav item
-    $(document).on('click', 'nav a', function (event) {
-        tmplTarget = event.currentTarget.attributes["href"].nodeValue;
-        window.controller(tmplTarget)
-    });
-
-    $(document).on("change", "#wallpaper-picker", function (event) {
-        $("body").data("imageUrl", event.currentTarget.value)
-        $("body").css({"background": "url('" + event.currentTarget.value + "') center center fixed no-repeat"})
-        $("#wallpaper-download").attr('href', event.currentTarget.value);
-    });
-
-    $(document).on("click", "#hide-everything", function (event) {
-        toggleView(event);
-    });
-
-</script>
-<script type="text/javascript">
     //complements of http://stackoverflow.com/questions/1664140/js-function-to-calculate-complementary-colour
     function RGB2HSV(rgb) {
-        hsv = new Object();
+        hsv = {};
         max = max3(rgb.r, rgb.g, rgb.b);
         dif = max - min3(rgb.r, rgb.g, rgb.b);
         hsv.saturation = (max == 0.0) ? 0 : (100 * dif / max);
@@ -626,19 +749,15 @@ footer #wallpaper-picker {
     function max3(a, b, c) {
         return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
     }
-    //thanks StackOverflow//
 
+    //thanks StackOverflow//
     function hexToRGB(hex) {
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
         return {r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16)};
     }
 
     function refreshColor() {
-        x = 1;  // x = seconds
-        var d = new Date()
-        var h = d.getHours();
-        var m = d.getMinutes();
-        var s = d.getSeconds();
+        var x = 1, d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
 
         if (h <= 9) {
             h = '0' + h
@@ -676,19 +795,24 @@ footer #wallpaper-picker {
     }
 
     refreshColor(); // execute color changing menu
+
+    Toadkicker.init();
 </script>
-<script id="twitter-link">!function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-    if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }
-}(document, 'script', 'twitter-wjs');</script>
+<script id="twitter-link">
+    !function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+</script>
 <footer>
-    <p id="copywhatever">&copy; 2014 <a href="https://twitter.com/toadkicker"  data-show-count="false" data-dnt="true">@toadkicker</a>&trade; aka Todd Baur. Background images provide by <a
-            href="http://www.reddit.com/r/wallpapers" target="_blank">reddit.com</a> &#9786;</p>
+    <p id="copywhatever">&copy; 2014 <a href="https://twitter.com/toadkicker" data-show-count="false" data-dnt="true">@toadkicker</a>&trade;
+        aka Todd Baur. Background images provide by <a
+                href="http://www.reddit.com/r/wallpapers" target="_blank">reddit.com</a> &#9786;</p>
 
     <div id="picker">
         <label for="wallpaper-picker">Pick a background:</label>
