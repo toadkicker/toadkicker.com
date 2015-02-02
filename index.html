@@ -526,7 +526,23 @@
         return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
 
-    var Toadkicker = (function ($) {
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    var Toadkicker;
+    Toadkicker = (function ($) {
         return {
             init: function () {
                 //EVENTS
@@ -547,7 +563,7 @@
                 });
 
                 $(document).on("change", "#wallpaper-picker", function (event) {
-                    Toadkicker.$body.data("imageUrl", event.currentTarget.value)
+                    Toadkicker.$body.data("imageUrl", event.currentTarget.value);
                     Toadkicker.$body.css({"background": "url('" + event.currentTarget.value + "') center center fixed no-repeat"})
                     $("#wallpaper-download").attr('href', event.currentTarget.value);
                 });
@@ -555,6 +571,11 @@
                 $(document).on("click", "#hide-everything", function (event) {
                     Toadkicker.toggleView(event);
                 });
+
+                $(window).on('resize', function () {
+                    Toadkicker.getBackgroundImages();
+                })
+
             },
             randomImages: [],
             $body: $("body"),
@@ -608,47 +629,64 @@
                 $wallpaper.val(imgUrl);
                 $("#wallpaper-download").attr('href', imgUrl);
             },
+            getWindowSize: function () {
+                var w = window,
+                        d = document,
+                        e = d.documentElement,
+                        g = d.getElementsByTagName('body')[0],
+                        x = w.innerWidth || e.clientWidth || g.clientWidth,
+                        y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+                return {width: x, height: y};
+            },
+            setWallaperURL: function () {
+                var windowSize = this.getWindowSize();
+                if (windowSize.width <= 480) {
+                    return "http://www.reddit.com/r/iwallpaper.json#nonsfw?jsonp=?";
+                }
+                return "http://www.reddit.com/r/wallpapers.json?jsonp=?";
+            },
             getBackgroundImages: function () {
-                var url = "http://www.reddit.com/r/wallpapers.json?jsonp=?";
-                $.ajax({
-                    type: 'GET',
-                    dataType: 'json',
-                    async: true,
-                    url: url,
-                    cache: false,
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        console.log(xhr.responseText);
-                        console.log(thrownError);
-                        alert("It looks like you might be using some ad-blocking extensions like Adblock or Disconnect. Please whitelist me! I'm only using Google Analytics. You're likely getting this message because I'm loading background images from Reddit.com.")
-                    },
-                    xhr: function () {
-                        var xhr = new window.XMLHttpRequest();
-                        //Download progress
-                        xhr.addEventListener("progress", function (evt) {
-                            Toadkicker.progressElem.show();
-                            Toadkicker.$body.addClass('loading');
-                            console.log(evt.lengthComputable);
-                            if (evt.lengthComputable) {
-                                var percentComplete = evt.loaded / evt.total;
-                                Toadkicker.progressElem.querySelector('.progress-bar').html(Math.round(percentComplete * 100) + "%");
-                            }
-                        }, false);
-                        return xhr;
-                    },
-                    complete: function () {
-                        Toadkicker.$body.removeClass('loading');
-                        Toadkicker.progressElem.hide();
-                    },
-                    success: function (result) {
-                        result.data.children.filter(function (row) {
-                            if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
-                                Toadkicker.randomImages.push(row.data.url);
-                            }
-                        });
-                        Toadkicker.setBackgroundImage();
-                        Toadkicker.populateWallpaperPicker();
-                    }
-                });
+                debounce(
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        async: true,
+                        url: this.setWallaperURL(),
+                        cache: false,
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr.responseText);
+                            console.log(thrownError);
+                            alert("It looks like you might be using some ad-blocking extensions like Adblock or Disconnect. Please whitelist me! I'm only using Google Analytics. You're likely getting this message because I'm loading background images from Reddit.com.")
+                        },
+                        xhr: function () {
+                            var xhr = new window.XMLHttpRequest();
+                            //Download progress
+                            xhr.addEventListener("progress", function (evt) {
+                                Toadkicker.progressElem.show();
+                                Toadkicker.$body.addClass('loading');
+                                if (evt.lengthComputable) {
+                                    var percentComplete = evt.loaded / evt.total;
+                                    Toadkicker.progressElem.querySelector('.progress-bar').html(Math.round(percentComplete * 100) + "%");
+                                }
+                            }, false);
+                            return xhr;
+                        },
+                        complete: function () {
+                            Toadkicker.$body.removeClass('loading');
+                            Toadkicker.progressElem.hide();
+                        },
+                        success: function (result) {
+                            result.data.children.filter(function (row) {
+                                if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
+                                    Toadkicker.randomImages.push(row.data.url);
+                                }
+                            });
+                            Toadkicker.setBackgroundImage();
+                            Toadkicker.populateWallpaperPicker();
+                        }
+                    })
+                , 500, true);
             },
             setBackgroundImage: function () {
                 var pickOne = Math.floor((Math.random() * Toadkicker.randomImages.length));
