@@ -1,0 +1,321 @@
+@import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);nav {
+  position: relative;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+nav ul li a {
+  font-family: "Lily Script One";
+  display: block;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+nav ul li a.active{
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+body {
+  margin: 0;
+}
+a {
+  background: 0 0
+}
+a:focus {
+  outline: thin dotted
+}
+a:active{
+  outline: 0
+}
+b{
+  font-weight: 700
+}
+code{
+  font-family: monospace, serif;
+  font-size: 1em
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"
+}
+img {
+  border: 0
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4rem font-size : 12 pt;
+}
+a {
+  text-decoration: none;
+  color: #007FFF;
+  padding: 0 0 .2rem;
+  font-weight: 700
+}
+a:hover {
+  color: #007FFF
+}
+code {
+  color: #007FFF
+}
+.page-nav {
+  box-sizing: border-box;
+  position: fixed;
+  padding: .5rem;
+  width: 100%;
+  background: 0 0
+}
+.page {
+  z-index: 0;
+  background: #EEE
+}
+.page-section {
+  padding-top: 3rem;
+  margin-bottom: 3rem
+}
+.page-features {
+  width: 100%;
+  background: #001a33;
+  overflow: scroll
+}
+.page-footer {
+  box-sizing: border-box;
+  padding-bottom: 3rem
+}
+.tag {
+  color: #000;
+  font-weight: 400
+}
+.end {
+  text-align: end
+}
+.row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -.5rem;
+  margin-left: -.5rem
+}
+.col-xs, .col-xs-10{
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-right: .5rem;
+  padding-left: .5rem
+}
+.col-xs {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%
+}
+.col-xs-10 {
+  -webkit-flex-basis: 83.333333333%;
+  -ms-flex-preferred-size: 83.333333333%;
+  flex-basis: 83.333333333%;
+  max-width: 83.333333333%
+}
+.clear {
+  clear: both;
+  height: 1px;
+}
+#main section {
+  position: relative;
+  padding: 10px;
+  color: #3e3e3e;
+  z-index: 1;
+  box-shadow: inset 0 1px 5px #333;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+body {
+  font-family: "Oxygen";
+  color: #636363;
+  margin: 20px;
+  padding: 0;
+}
+html.background {
+  background-color: #333333;
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.loading {
+  background: url("heart.svg");
+}
+footer a{
+  color: #e0e0e0;
+}
+#home h1, #portfolio h1, #contact h1 {
+  font-family: "Julius Sans One";
+}
+#portfolio .portfolio {
+  max-height: 440px;
+  overflow-y: auto;
+}
+#portfolio ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#portfolio ul li {
+  padding: 0 10px 10px 0;
+}
+a.company {
+  font-family: "Julius Sans One", sans-serif;
+}
+.company-title {
+  font-size: 0.75em;
+}
+.company-description {
+  font-size: 0.9em;
+}
+#hide-everything, #hide-everything:visited {
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -webkit-transform: rotate(-90deg);
+  position: absolute;
+  right: 0;
+  top: 45px;
+  color: #fff;
+  padding: 10px;
+  background: rgba(128, 128, 128, 0.85);
+}
+.in {
+  opacity: 1;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  -ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+.out {
+  opacity: 0;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  -ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 0;
+  padding: 10px;
+}
+footer #wallpaper-picker {
+  max-width: 250px;
+}
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+@media only screen and (min-width: 48em) {
+  .container {
+ width: 46rem
+}
+}
+@media only screen and (min-width: 62em) {
+  .container {
+ width: 61rem
+}
+}
+@media only screen and (min-width: 75em) {
+  .container {
+ width: 71rem
+}
+}
