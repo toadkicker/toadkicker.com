@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-purifycss');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+
   grunt.initConfig({
     
     clean: ['dist'],
@@ -17,6 +21,24 @@ module.exports = function(grunt) {
       },
       options: {
         transform: ['debowerify']
+      }
+    },
+
+    uglify: {
+      options: {
+        compress: true
+      },
+      js: {
+        files: {
+          'dist/main.min.js': 'main.js'
+        }
+      }
+    },
+    cssmin: {
+      dist: {
+        files: {
+          'dist/main.min.css': 'dist/main.css'
+        }
       }
     },
 
@@ -59,11 +81,10 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadNpmTasks('grunt-purifycss');
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   
-  grunt.registerTask('default', ['clean', 'browserify', 'copy', 'purifycss']);
+  grunt.registerTask('default', ['clean', 'browserify', 'copy', 'purifycss', 'uglify:js', 'cssmin:dist']);
   
   grunt.registerTask('server', ['default', 'connect', 'watch']);
 

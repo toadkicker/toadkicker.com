@@ -20,6 +20,9 @@ var Toadkicker;
 Toadkicker = (function ($) {
   return {
     init: function () {
+
+      //set the year in the footer
+      $("#year").html(new Date().getFullYear());
       //EVENTS
 
       //for when we land on the page
