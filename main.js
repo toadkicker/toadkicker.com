@@ -14,7 +14,7 @@ function debounce(func, wait, immediate) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-};
+}
 
 var Toadkicker;
 Toadkicker = (function ($) {
@@ -42,7 +42,7 @@ Toadkicker = (function ($) {
 
       $(document).on("change", "#wallpaper-picker", function (event) {
         Toadkicker.$body.data("imageUrl", event.currentTarget.value);
-        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.value + "')"})
+        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.value + "')"});
         $("#wallpaper-download").attr('href', event.currentTarget.value);
       });
 
