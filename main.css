@@ -1,14 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Lily+Script+One|Julius+Sans+One|Oxygen);
-
 @media (min-width: 320px) and (max-width: 480px) {
   nav {
     position: relative;
     left: 10px;
-    top: 0px;
+    top: 0;
   }
 
   nav ul li {
-    margin: 0px;
+    margin: 0;
   }
 
   nav ul li a {
@@ -89,7 +87,10 @@ nav ul li {
 }
 
 nav ul li a {
-  font-family: "Lily Script One";
+  font-family: niveau-grotesk-small-caps, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
   display: block;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -285,7 +286,8 @@ body {
   padding: 0;
   margin: 0;
   font-weight: 400;
-  line-height: 1.4rem font-size : 12 pt;
+  line-height: 1.4rem;
+  font-size : 12pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1450,7 +1452,9 @@ code {
 }
 
 body {
-  font-family: "Oxygen";
+  font-family: niveau-grotesk, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   color: #636363;
   margin: 20px;
   padding: 0;
@@ -1475,7 +1479,9 @@ footer a, footer a:visited {
 }
 
 #home h1, #portfolio h1, #contact h1 {
-  font-family: "Julius Sans One";
+  font-family: spumante, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 #portfolio .portfolio {
@@ -1495,7 +1501,9 @@ footer a, footer a:visited {
 }
 
 a.company {
-  font-family: "Julius Sans One", sans-serif;
+  font-family: niveau-grotesk-small-caps, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .company-title {

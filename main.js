@@ -334,10 +334,6 @@ function refreshColor() {
   setTimeout(refreshColor, x * 1000);
 }
 
-refreshColor(); // execute color changing menu
-
-Toadkicker.init();
-
 !function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
   if (!d.getElementById(id)) {
@@ -347,3 +343,7 @@ Toadkicker.init();
     fjs.parentNode.insertBefore(js, fjs);
   }
 }(document, 'script', 'twitter-wjs');
+
+refreshColor(); // execute color changing menu
+
+Toadkicker.init();

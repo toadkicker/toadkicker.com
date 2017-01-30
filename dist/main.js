@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 String.prototype.endsWith = function (suffix) {
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
@@ -15,7 +15,7 @@ function debounce(func, wait, immediate) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-};
+}
 
 var Toadkicker;
 Toadkicker = (function ($) {
@@ -43,7 +43,7 @@ Toadkicker = (function ($) {
 
       $(document).on("change", "#wallpaper-picker", function (event) {
         Toadkicker.$body.data("imageUrl", event.currentTarget.value);
-        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.value + "')"})
+        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.value + "')"});
         $("#wallpaper-download").attr('href', event.currentTarget.value);
       });
 
@@ -335,10 +335,6 @@ function refreshColor() {
   setTimeout(refreshColor, x * 1000);
 }
 
-refreshColor(); // execute color changing menu
-
-Toadkicker.init();
-
 !function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
   if (!d.getElementById(id)) {
@@ -349,4 +345,9 @@ Toadkicker.init();
   }
 }(document, 'script', 'twitter-wjs');
 
+refreshColor(); // execute color changing menu
+
+Toadkicker.init();
+
 },{}]},{},[1])
+;

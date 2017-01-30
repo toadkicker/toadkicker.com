@@ -3,15 +3,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.initConfig({
+    //noinspection JSUnresolvedFunction,JSUnresolvedVariable
+    grunt.initConfig({
     
     clean: ['dist'],
 
     copy: {
       all: {
         src: ['*.css', '*.html', '*.png', '*.ico', "*.svg", '!Gruntfile.js'],
-        dest: 'dist/',
-      },
+        dest: 'dist/'
+      }
     },
 
     browserify: {
@@ -45,10 +46,10 @@ module.exports = function(grunt) {
     connect: {
       options: {
         port: process.env.PORT || 3131,
-        base: 'dist/',
+        base: 'dist/'
       },
 
-      all: {},
+      all: {}
     },
 
     watch: {
@@ -58,17 +59,17 @@ module.exports = function(grunt) {
 
       html: {
         files: '<%= ejs.all.src %>',
-        tasks: ['ejs'],
+        tasks: ['ejs']
       },
 
       js: {
         files: '<%= browserify.all.src %>',
-        tasks: ['browserify'],
+        tasks: ['browserify']
       },
 
       assets: {
         files: ['assets/**/*', '*.css', '*.js', 'images/**/*', 'img/**/*', '!Gruntfile.js'],
-        tasks: ['copy'],
+        tasks: ['copy']
       }
     },
 
