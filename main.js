@@ -5,14 +5,14 @@ String.prototype.endsWith = function (suffix) {
 function debounce(func, wait, immediate) {
   var timeout;
   return function (args) {
-    var context = this, args = arguments, later = function () {
+    var context = this, argz = args || arguments, later = function () {
       timeout = null;
-      if (!immediate) func.apply(context, args);
+      if (!immediate) func.apply(context, argz);
     };
     var callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
+    if (callNow) func.apply(context, argz);
   };
 }
 
@@ -27,7 +27,10 @@ Toadkicker = (function ($) {
 
       //for when we land on the page
       $(document).on('ready', null, function () {
-        var view = window.location.hash === "" ? "#home" : window.location.hash;
+        var view = "#home";
+        if(window.location.search.length > 0) {
+          view = "#404";
+        }
         //i want my hash tag in the url!
         window.location.hash = view;
         Toadkicker.getBackgroundImages();
@@ -61,30 +64,37 @@ Toadkicker = (function ($) {
     homeView: $("#home-template").html(),
     portfolioView: $("#portfolio-template").html(),
     contactView: $("#contact-template").html(),
-    playgroundView: $("#playground-template").html(),
+    // playgroundView: $("#playground-template").html(),
+    fourOhFourView: $("#fourOhFour-template").html(),
     wallpapers: $("#reddit-wallpapers"),
     controller: function (view) {
       var $main = $("#main");
       switch (view) {
-        case "#home":
+        case "#home"||"/#home"||"/home":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.homeView);
-        case "#portfolio":
+        case "#portfolio"||"/#portfolio"||"/portfolio":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.portfolioView);
-        case "#contact":
+        case "#contact"||"/#contact"||"/contact":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.contactView);
-        case "#playground":
+        // case "#playground"||"/#playground"||"/playground":
+        //   Toadkicker.setActiveNav(view);
+        //   return $main.html(Toadkicker.playgroundView);
+        case "#404" || "/#404" || "/?=404":
           Toadkicker.setActiveNav(view);
-          return $main.html(Toadkicker.playgroundView);
+          return $main.html(Toadkicker.fourOhFourView);
+        default:
+          Toadkicker.setActiveNav(view);
+          return $main.html(Toadkicker.homeView);
       }
     },
     setActiveNav: function (target) {
       //clear the active class from it
       $('nav a').removeClass('active');
       //maybe we don't have a hashtag in the url yet?
-      if (window.location.hash == "") {
+      if (window.location.hash === "" || window.location.hash === "/#" || window.location.hash === "/#home") {
         $("nav a[href='#home']").addClass("active")
       }
       //lets make sure we got the target argument
@@ -120,9 +130,9 @@ Toadkicker = (function ($) {
     setWallaperURL: function () {
       var windowSize = this.getWindowSize();
       if (windowSize.width <= 480) {
-        return "http://www.reddit.com/r/iwallpaper.json#nonsfw?jsonp=?";
+        return "https://www.reddit.com/r/iwallpaper.json#nonsfw?jsonp=?";
       }
-      return "http://www.reddit.com/r/EarthPorn.json?jsonp=?";
+      return "https://www.reddit.com/r/EarthPorn.json?jsonp=?";
     },
     getBackgroundImages: function () {
       $.ajax({

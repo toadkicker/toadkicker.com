@@ -19,7 +19,7 @@
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="/main.css" type="text/css">
 </head>
 <body>
 <div class="container fade in">
@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col-xs">
       <footer>
-        <p id="copywhatever">&copy; 2015 <a href="https://twitter.com/toadkicker" data-show-count="false"
+        <p id="copywhatever">&copy;<span id="year">2015</span> <a href="https://twitter.com/toadkicker" data-show-count="false"
                                             data-dnt="true">@toadkicker</a>&trade;
           aka Todd Baur. Background images provide by <a
               href="http://www.reddit.com/r/wallpapers" target="_blank">reddit.com</a> &#9786;</p>
@@ -90,23 +90,16 @@
 <script type="text/html" id="portfolio-template">
   <section id="portfolio">
     <div class="portfolio content">
+      <h3>Profile</h3>
+      <p>Wide skill set ranging from user interface design, software development, and cloud architecture. Background includes everything from startups to multi-billion dollar projects.</p>
+      <h3>Experience</h3>
       <ul>
-        <li>
-          <a class="company" href="https://www.toadkicker.com#portfolio">Freelance Entreprenuer</a>
-
-          <div class="company-title">Self</div>
-          <div class="company-description">
-            <p>Currently working on a project under non-disclosure agreement. Stealth mode active.</p>
-          </div>
-        </li>
         <li>
           <a class="company" href="https://www.intensity.com" target="_blank">Intensity</a>
 
           <div class="company-title">Senior Associate</div>
           <div class="company-description">
-            <p>Responsible for devops build and deployment, architecture, and user interface coding. Tools used include
-              Salt, Terraform, AWS Cloudformation, AWS SDK, Ruby, Python, Java, and Javascript. The UI uses Angular JS,
-              and we wrote an admin tool using ReactJS.</p>
+            <p>Responsible for devops build and deployment, architecture, and user interface development. Tools used include Salt, Terraform, AWS Cloudformation, AWS SDK, Ruby, Python, Java, and Javascript. The user interface is build with Angular JS, and we wrote an admin tool using ReactJS.</p>
           </div>
         </li>
         <li>
@@ -115,72 +108,232 @@
           <div class="company-title">Software Developer</div>
           <div class="company-description">
             <p>
-            Currently working on making the internet a safer place for kids. Redesigning mobile experience from top to
-            bottom. Migrated legacy stack to AWS, fixing hundreds of capacity related customer facing bugs, reduced
-            costs of server management by 60%, and improved performance considerably. Our new stack is built using
-            Polymer, Angular, Javascript, Ruby, Java, Python, Swift, Android, and more.</p>
+              Worked on making the internet a safer place for kids. Redesigned mobile experience from top to bottom. Migrated legacy stack to AWS, fixing hundreds of capacity related customer facing bugs, reduced costs of server management by 60%, and improved performance considerably. The new stack is built using Polymer, Angular, Javascript, Ruby, Java, Python, Swift, Android, and others</p>
           </div>
         </li>
         <li>
           <a class="company" href="https://www.stubhub.com" target="_blank">StubHub</a>
 
-          <div class="company-title">Javascript Performance Engineer</div>
+          <div class="company-title">Performance Engineer</div>
           <div class="company-description">
-            <p>Investigated various aspects of performance impacting customer experience. Responsible for
-              minification of javascript and CSS assets for entire front end product. Worked closely with
-              release engineers to create Jenkins jobs for the company to deploy UI independent of
-              back-end code. Developed responsive mobile shopping cart checkout experience. Developed
-              several reusable javascript components. Taught engineers about javascript software patterns
-              and best practices. Experience with Backbone.js, Node, and associated tools/frameworks.</p>
+            <p>Investigated various aspects of performance impacting customer experience. Responsible for minification of javascript and CSS assets for entire front end product. Worked closely with release engineers to create Jenkins jobs for the company to deploy UI independent of back-end code. Developed responsive mobile shopping cart checkout experience. Developed several reusable javascript components. Taught engineers about javascript software patterns and best practices. Experience with Backbone.js, Node, and associated tools/frameworks. Also worked in StubHub labs testing new user experiences with real customers using cameras, questionnaires, and other common testing techniques. Assisted UI team with transitioning from agile development model that frequently became waterfall into a Lean UX approach. Invited creator of Lean UX to give a presentation to the team on the methodology which eventually lead them to completely redesign the entire StubHub experience as you see it on the web today.</p>
           </div>
         </li>
 
         <li>
-          <a class="company" href="http://www.toadkicker.com">Freelance Designer/Developer</a>
+          <a class="company" href="http://www.toadkicker.com">Tesla Motors</a>
 
-          <div class="company-title">Designer/Developer</div>
+          <div class="company-title">Contractor</div>
           <div class="company-description">
-            <p>Worked with several clients delivering a range of Ruby on Rails based projects. Of note is a
-              seven month project with Tesla Motors delivering a custom application that reported on the
-              status of the assembly line's production.</p>
-          </div>
-        </li>
-        <li>
-          <a class="company" href="http://www.roamlocal.com" target="_blank">Roamlocal</a>
-
-          <div class="company-title">Designer/Developer</div>
-          <div class="company-description">
-            <p>Roamlocal provides private walking tours in San Francisco using an interactive iPad
-              presentation. The site is designed to portray a post card on a table. The logo was custom
-              drawn using Illustrator and then used Photoshop to remove the original lettering. The site
-              enables customers to schedule tours. It is backed by a complete admin tool. Written using
-              Ruby on Rails, HTML5, CSS3, and jQuery.</p>
+            <p>Developed application for Tesla to track the status of Model S builds in real time through the factory. The application was a visual representation of the the factory floor available to any manager. A user could select their workspace and view real time reports of what was in process, what a vehicle's to-do list remained, who purchased it, what paint color, and other important metadata. The application was deployed across screen throughout the factory so anyone could view where a vehicle in build was located.</p>
           </div>
         </li>
         <li>
           <a class="company" href="http://www.paypal.com" target="_blank">Paypal, Inc.</a>
-
           <div class="company-title">Front End Engineer</div>
           <div class="company-description">
-            <p>Worked as a front end developer and UX engineer. Responsible for product design and
-              development of Paypal's Customer Service Application. Developed <a
-                  href="http://shopping.paypal.com" target="_blank">shopping.paypal.com</a>, a
-              multi-tenant site providing branded shopping experiences for Paypal and its key partners.
-              Also did some good work on <a href="http://www.billmelater.com" target="_blank">billmelater.com</a>
+            <p>Part of the team during PayPal's purchase of BillMeLater. Worked as a front end developer and UX engineer. Responsible for product design and development of Paypal's Customer Service Application. Worked on BillMeLater's web site adding features such as payment history, payment plans, and online dispute management. Designed and developed PayPal's multitenant shopping.paypal.com property allowing partners to create their own branded shopping experience.</a>
             </p>
           </div>
         </li>
         <li>
-          <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance
-            Institute, Inc.</a>
+          <a class="company" href="http://www.governanceinstitute.com" target="_blank">The Governance Institute, Inc.</a>
 
           <div class="company-title">Software Engineer</div>
           <div class="company-description">
-            <p>Sole designer/developer of this site. It is built using DotNetNuke. It has a conference
-              management system, member resource library, and several business integration features.</p>
+            <p>Sole designer/developer of thegovernanceinstitue.com. Built using DotNetNuke which is a microsoft.NET based framework. Requirements delivered included a conference management system, member resource library, and several business integration features with third party vendors and database ETL.</p>
+          </div>
+        </li>
+        <li>
+          <a class="company" href="http://www.3rdmaw.marines.mil/Units/MAG-13/MALS-13/" target="_blank">US Marines</a>
+
+          <div class="company-title">Systems Administrator</div>
+          <div class="company-description">
+            <p>Managed military base network operations and servers. Systems included Windows NT/2000, Citrix, Novel Netware, HP Unix, Redhat, FreeBSD, Cisco IOS. Performed everything from network cable installation, clustered database configuration and management, backup strategy, security auditing of secure and unsecure networks, investigations into intrusions, and network performance tuning.</p>
           </div>
         </li>
       </ul>
+      <h3>Education</h3>
+      <ul class="company-description">
+        <li>
+          University of Phoenix in San Diego, CA &mdash; 2006 Bachelors in Business Management
+        </li>
+        <li>
+          Arizona Western College in Yuma, AZ - 2002 Associate in Computer Science
+        </li>
+      </ul>
+      <h3>Certifications</h3>
+      <ul class="company-description">
+        <li>Amazon Web Services Architect</li>
+        <li>Apple Certified Systems Developer</li>
+        <li>Microsoft Certified Professional</li>
+        <li>Comptia A+, Network+, Security+</li>
+      </ul>
+      <h3>Skills</h3>
+      <div class="company-description">Strong foundational knowledge of user psychology, design patterns, color theory, electronic components, complex networking systems, and data structures and algorithms</div>
+      <table>
+        <thead>
+          <tr>
+            <td>Front End <br>Development</td>
+            <td>Networking</td>
+            <td>Databases</td>
+            <td>Cloud</td>
+            <td>Design</td>
+            <td>Back End <br>Development</td>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>Angular</td>
+            <td>Cisco IOS</td>
+            <td>Oracle</td>
+            <td>DevOps</td>
+            <td>Adobe CC</td>
+            <td>Java</td>
+          </tr>
+          <tr>
+            <td>Node</td>
+            <td>HP Procurve</td>
+            <td>MySQL</td>
+            <td>AWS</td>
+            <td>Omnigraffle</td>
+            <td>Ruby</td>
+          </tr>
+          <tr>
+            <td>Javascript</td>
+            <td>Voip</td>
+            <td>Postgres</td>
+            <td>Google</td>
+            <td>LeanUX</td>
+            <td>Javascript</td>
+          </tr>
+          <tr>
+            <td>HTML5</td>
+            <td>Ethernet</td>
+            <td>Mongo</td>
+            <td>Azure</td>
+            <td>Agile</td>
+            <td>Python</td>
+          </tr>
+          <tr>
+            <td>CSS3</td>
+            <td>Routers</td>
+            <td>Dynamo</td>
+            <td>Salt</td>
+            <td>Story Boarding</td>
+            <td>C++</td>
+          </tr>
+          <tr>
+            <td>Backbone</td>
+            <td>Switches</td>
+            <td>NoSQL</td>
+            <td>Kubernetes</td>
+            <td>Brand Research</td>
+            <td>PHP</td>
+          </tr>
+          <tr>
+            <td>React</td>
+            <td>VPN</td>
+            <td>MSSQL</td>
+            <td>Logging</td>
+            <td>User Testing</td>
+            <td>Rails/Sinatra</td>
+          </tr>
+          <tr>
+            <td>Typescript</td>
+            <td>IPSec</td>
+            <td>Clustering</td>
+            <td>Automation</td>
+            <td>UI/UX</td>
+            <td>Wordpress</td>
+          </tr>
+          <tr>
+
+            <td>Coffeescript</td>
+            <td>QoS</td>
+            <td>TSQL</td>
+            <td>Big Data</td>
+            <td></td>
+            <td>Django</td>
+          </tr>
+          <tr>
+            <td>jQuery</td>
+            <td>DNS</td>
+            <td>ETL</td>
+            <td>IoT</td>
+            <td></td>
+            <td>Java EE</td>
+          </tr>
+          <tr>
+            <td>Ajax</td>
+            <td></td>
+            <td></td>
+            <td>IAAS/PAAS</td>
+            <td></td>
+            <td>IntelliJ</td>
+          </tr>
+          <tr>
+            <td>Web Standards</td>
+            <td>IMAP/POP3/SMTP</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>RubyMine</td>
+          </tr>
+          <tr>
+            <td>Accessibility</td>
+            <td>HTTP/HTTPS</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>API Design</td>
+          </tr>
+          <tr>
+            <td>APIs/CORS</td>
+            <td>FTP/SFTP</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>PyCharm</td>
+          </tr>
+          <tr>
+            <td>Selenium</td>
+            <td>SSH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Automated Testing</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Wordpress</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Webstorm</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </tbody>
+      </table>
+
     </div>
   </section>
 </script>
@@ -196,9 +349,18 @@
     </div>
   </section>
 </script>
+<script type="text/html" id="fourOhFour-template">
+  <section id="fourOhFour">
+    <div class="content">
+      <h3>Well, this is embarrasing...</h3>
+      <p>Somehow you've managed to get on a 404 page. There isn't even pages on this site. What happened?</p>
+      <p>Try clicking one of those boxes above and never come back here again.</p>
+    </div>
+  </section>
+</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://use.typekit.net/pdm5jfc.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
-<script src="main.js"></script>
+<script src="/main.js?=ebcaac20177bbc6a1a91e33549871e17"></script>
 </body>
 </html>

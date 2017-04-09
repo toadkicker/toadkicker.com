@@ -1498,7 +1498,27 @@ footer a, footer a:visited {
 #portfolio ul li {
   padding: 0 10px 10px 0;
 }
+#portfolio table {
+  width: 100%;
+}
+#portfolio table td {
+  text-align: center;
+  padding: 0 3px;
+}
 
+#portfolio thead tr {
+  font-family: niveau-grotesk-small-caps, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+#portfolio td:nth-child(odd) {
+  background: #e0e0e0;
+}
+#portfolio td:nth-child(even) {
+  color: #e0e0e0;
+  background-color: #636363;
+}
 a.company {
   font-family: niveau-grotesk-small-caps, sans-serif;
   font-style: normal;
