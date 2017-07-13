@@ -64,12 +64,12 @@ module.exports = function(grunt) {
 
       js: {
         files: '<%= browserify.all.src %>',
-        tasks: ['browserify']
+        tasks: ['default']
       },
 
       assets: {
         files: ['assets/**/*', '*.css', '*.js', 'images/**/*', 'img/**/*', '!Gruntfile.js'],
-        tasks: ['copy']
+        tasks: ['default']
       }
     },
 

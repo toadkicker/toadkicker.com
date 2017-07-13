@@ -28,7 +28,7 @@ Toadkicker = (function ($) {
       //for when we land on the page
       $(document).on('ready', null, function () {
         var view = "#home";
-        if(window.location.search.length > 0) {
+        if (window.location.search.length > 0) {
           view = "#404";
         }
         //i want my hash tag in the url!
@@ -43,10 +43,18 @@ Toadkicker = (function ($) {
         Toadkicker.controller(tmplTarget)
       });
 
-      $(document).on("change", "#wallpaper-picker", function (event) {
-        Toadkicker.$body.data("imageUrl", event.currentTarget.value);
-        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.value + "')"});
-        $("#wallpaper-download").attr('href', event.currentTarget.value);
+      $(document).on("click", "#wallpaper-picker a.picker", function (event) {
+        event.preventDefault();
+        $("#wallpaper-picker").find("a.picker").removeClass('active');
+        event.currentTarget.classList.add('active');
+        Toadkicker.$body.data("imageUrl", event.currentTarget.href);
+        Toadkicker.$body.css({"background-image": "url('" + event.currentTarget.href + "')"});
+        Toadkicker.toggleFooter();
+      });
+
+      $(document).on("click", "a.footer-toggle", function (event) {
+        event.preventDefault();
+        Toadkicker.toggleFooter();
       });
 
       $(document).on("click", "#hide-everything", function (event) {
@@ -54,8 +62,14 @@ Toadkicker = (function ($) {
       });
 
       $(window).on('resize', function () {
-        debounce(Toadkicker.getBackgroundImages(), 1000, true);
+        var sizeObj = Toadkicker.getWindowSize();
+        if(sizeObj.width <= 600) {
+          debounce(Toadkicker.getBackgroundImages(), 1000, true);
+        }
+        //
+        // debounce(Toadkicker.getBackgroundImages(), 1000, true);
       })
+
 
     },
     randomImages: [],
@@ -70,13 +84,13 @@ Toadkicker = (function ($) {
     controller: function (view) {
       var $main = $("#main");
       switch (view) {
-        case "#home"||"/#home"||"/home":
+        case "#home" || "/#home" || "/home":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.homeView);
-        case "#portfolio"||"/#portfolio"||"/portfolio":
+        case "#portfolio" || "/#portfolio" || "/portfolio":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.portfolioView);
-        case "#contact"||"/#contact"||"/contact":
+        case "#contact" || "/#contact" || "/contact":
           Toadkicker.setActiveNav(view);
           return $main.html(Toadkicker.contactView);
         // case "#playground"||"/#playground"||"/playground":
@@ -90,6 +104,18 @@ Toadkicker = (function ($) {
           return $main.html(Toadkicker.homeView);
       }
     },
+    toggleFooter: function () {
+      var $footer = $('footer');
+      var $picker = $('footer #picker');
+      var toggle = $picker.data('toggle');
+      if (toggle === true) {
+        $picker.data({'toggle': toggle = false});
+        $footer.removeClass('close').addClass('open');
+      } else {
+        $picker.data({'toggle': true});
+        $footer.removeClass('open').addClass('close');
+      }
+    },
     setActiveNav: function (target) {
       //clear the active class from it
       $('nav a').removeClass('active');
@@ -99,31 +125,38 @@ Toadkicker = (function ($) {
       }
       //lets make sure we got the target argument
       if (target !== undefined) {
-        $("nav a[href=" + target + "]").addClass("active");
+        $("nav a[href='" + target + "']").addClass("active");
       } else {
-        $("nav a[href=" + window.location.hash + "]").addClass("active");
+        $("nav a[href='" + window.location.hash + "']").addClass("active");
       }
     },
     populateWallpaperPicker: function () {
       var $wallpaper = $("#wallpaper-picker");
       var imgUrl = Toadkicker.$body.data("imageUrl");
+      var pp = document.querySelectorAll("#wallpaper-picker");
+      pp[0].innerHTML = "";
       if (Toadkicker.randomImages.length > 0) {
-        Toadkicker.randomImages.forEach(function (img) {
-          $wallpaper.append('<option value="' + img + '">' + img + '</option>');
-        });
-      } else {
-        $wallpaper.append('<option value="reload">Get New Wallpapers!</option>');
+        for (var i = Toadkicker.randomImages.length; i--;) {
+          var img = Toadkicker.randomImages[i];
+          var preview = img.preview.images[0].resolutions[0];
+          if (preview.height > 108) {
+            preview.height = 108
+          }
+          if (preview.width > 108) {
+            preview.width = 108
+          }
+          $wallpaper.append('<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a class="picker" href="' + img.url + '"><img src="' + img.preview.images[0].resolutions[0].url + '" alt="' + img.title + '"><span style="height:' + preview.height + 'px;width:' + preview.width + 'px">' + img.title + '&mdash; set bg</span></a><a class="download-bg" href="' + img.url + '" download="' + img.url + '">want <img src="heart.svg" height="14px"></a> </div>');
+        }
       }
       $wallpaper.val(imgUrl);
-      $("#wallpaper-download").attr('href', imgUrl);
     },
     getWindowSize: function () {
       var w = window,
-          d = document,
-          e = d.documentElement,
-          g = d.getElementsByTagName('body')[0],
-          x = w.innerWidth || e.clientWidth || g.clientWidth,
-          y = w.innerHeight || e.clientHeight || g.clientHeight;
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight || e.clientHeight || g.clientHeight;
 
       return {width: x, height: y};
     },
@@ -162,11 +195,13 @@ Toadkicker = (function ($) {
         complete: function () {
           Toadkicker.$body.removeClass('loading');
           Toadkicker.progressElem.hide();
+          $("a.picker[href='"+Toadkicker.$body.data("imageUrl") +"']").addClass('active');
         },
         success: function (result) {
+          Toadkicker.randomImages = [];
           result.data.children.filter(function (row) {
             if (row.data.url.endsWith("jpg") || row.data.url.endsWith("png") || row.data.url.endsWith("jpeg")) {
-              Toadkicker.randomImages.push(row.data.url);
+              Toadkicker.randomImages.push(row.data);
             }
           });
           Toadkicker.setBackgroundImage();
@@ -175,13 +210,12 @@ Toadkicker = (function ($) {
       });
     },
     setBackgroundImage: function () {
-      var pickOne = Math.floor((Math.random() * Toadkicker.randomImages.length));
       if (Toadkicker.randomImages.length > 0) {
+        var pickOne = Math.floor((Math.random() * Toadkicker.randomImages.length));
         var htmlEl = document.querySelector('html');
-        htmlEl.setAttribute('style', "background-image: url('" + Toadkicker.randomImages[pickOne] + "')");
-        Toadkicker.$body.data("imageUrl", Toadkicker.randomImages[pickOne]);
+        htmlEl.setAttribute('style', "background-image: url('" + Toadkicker.randomImages[pickOne].url + "')");
+        Toadkicker.$body.data("imageUrl", Toadkicker.randomImages[pickOne].url);
       }
-
     },
     toggleView: function (event) {
       if (event !== undefined) {
