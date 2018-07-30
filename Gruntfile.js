@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     //noinspection JSUnresolvedFunction,JSUnresolvedVariable
     grunt.initConfig({
-    
+
     clean: ['dist'],
 
     copy: {
@@ -58,8 +58,8 @@ module.exports = function(grunt) {
       },
 
       html: {
-        files: '<%= ejs.all.src %>',
-        tasks: ['ejs']
+        files: ['*.html'],
+        tasks: ['default']
       },
 
       js: {
@@ -84,9 +84,9 @@ module.exports = function(grunt) {
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  
+
   grunt.registerTask('default', ['clean', 'browserify', 'copy', 'purifycss', 'uglify:js', 'cssmin:dist']);
-  
+
   grunt.registerTask('server', ['default', 'connect', 'watch']);
 
 };
