@@ -19,9 +19,6 @@ module.exports = function(grunt) {
       all: {
         src: 'main.js',
         dest: 'dist/main.js'
-      },
-      options: {
-        transform: ['debowerify']
       }
     },
 
