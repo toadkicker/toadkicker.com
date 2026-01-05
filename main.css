@@ -1739,3 +1739,62 @@ footer #wallpaper-picker a:hover span {
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
+
+/* Contact Form Styles */
+#contact-form {
+  max-width: 400px;
+}
+
+#contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #007FFF;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 127, 255, 0.2);
+}
+
+#contact-form button {
+  background-color: #007FFF;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#contact-form button:hover {
+  background-color: #0066cc;
+}
+
+#contact .social-links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+#contact .social-links a {
+  margin: 0 0.25rem;
+}
